@@ -51,7 +51,7 @@
                 }
             },
             "processing": true,
-            "serverSide": true,
+//            "serverSide": true,
             "ajax": "{!! $type !!}/data",
             "fnDrawCallback": function (oSettings) {
                 $(".iframe").colorbox({
