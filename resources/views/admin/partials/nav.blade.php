@@ -26,6 +26,24 @@
                 </li>
                 <li>
                     <a href="#">
+                        <i class="glyphicon glyphicon-bullhorn"></i> Product
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul class="nav collapse">
+                        <li>
+                            <a href="{{url('admin/productcategory')}}">
+                                <i class="glyphicon glyphicon-list"></i>  Product categories
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/product')}}">
+                                <i class="glyphicon glyphicon-bullhorn"></i> List Product
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
                         <i class="glyphicon glyphicon-bullhorn"></i> Articles
                         <span class="fa arrow"></span>
                     </a>

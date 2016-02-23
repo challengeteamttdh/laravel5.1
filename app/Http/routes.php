@@ -31,6 +31,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     # Admin Dashboard
     Route::get('dashboard', 'Admin\DashboardController@index');
 
+    # Product
+    Route::get('product/data', 'Admin\ProductCategoriesController@data');
+    Route::get('product/{language}/show', 'Admin\ProductCategoriesController@show');
+    Route::get('product/{language}/edit', 'Admin\ProductCategoriesController@edit');
+    Route::get('product/{language}/delete', 'Admin\ProductCategoriesController@delete');
+    Route::resource('product', 'Admin\ProductCategoriesController');
+    
     # Language
     Route::get('language/data', 'Admin\LanguageController@data');
     Route::get('language/{language}/show', 'Admin\LanguageController@show');
