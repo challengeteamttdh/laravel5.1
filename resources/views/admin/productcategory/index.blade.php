@@ -1,7 +1,7 @@
 @extends('admin.layouts.default')
 
 {{-- Web site Title --}}
-@section('title') {!! trans("admin/newscategory.newscategories") !!}
+@section('title') Product category 
 :: @parent @stop
 
 {{-- Content --}}
@@ -11,7 +11,7 @@
         Product Category
         <div class="pull-right">
             <div class="pull-right">
-                <a href="{!! URL::to('admin/articlecategory/create') !!}"
+                <a href="{!! URL::to('admin/productcategory/create') !!}"
                    class="btn btn-sm  btn-primary iframe">
                     <span class="glyphicon glyphicon-plus-sign"></span>
                     New

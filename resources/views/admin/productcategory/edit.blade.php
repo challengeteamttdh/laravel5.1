@@ -18,7 +18,7 @@
 <!--        <div class="form-group  {{ $errors->has('language_id') ? 'has-error' : '' }}">
             {!! Form::label('language_id', trans("admin/admin.language"), array('class' => 'control-label')) !!}
             <div class="controls">
-                {!! Form::select('language_id', $languages, @isset($articlecategory)? $articlecategory->language_id : 'default', array('class' => 'form-control')) !!}
+                {!! Form::select('language_id', $ languages, @isset($ articlecategory)? $ articlecategory->language_id : 'default', array('class' => 'form-control')) !!}
                 <span class="help-block">{{ $errors->first('language_id', ':message') }}</span>
             </div>
         </div>-->
@@ -45,11 +45,7 @@
         </button>
         <button type="submit" class="btn btn-sm btn-success">
             <span class="glyphicon glyphicon-ok-circle"></span> 
-            @if (isset($newscategory)) 
             Edit
-            @else 
-            {{trans("admin/modal.create") }}
-            @endif
         </button>
     </div>
 </div>

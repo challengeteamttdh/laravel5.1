@@ -9,6 +9,8 @@ use App\Http\Requests\Admin\ProductCategoryRequest;
 use App\Http\Requests\Admin\DeleteRequest;
 use App\Http\Requests\Admin\ReorderRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
 //use Datatables;
 
 class ProductCategoryController extends AdminController {
@@ -33,8 +35,20 @@ class ProductCategoryController extends AdminController {
      * @return Response
      */
     public function create() {
-        $languages = Language::lists('name', 'id')->toArray();
-        return view('admin.productcategory.create_edit', compact('languages'));
+        if(Request::ismethod('post')){
+            $params = Input::all();
+            if(empty($params["name"])){
+                $error = 'Please enter name of category';
+                
+            }else{
+                $product_cate = new ProductCategory();
+                $product_cate->name = $params["name"];
+                $product_cate->save();
+                return view('admin.productcategory.create');
+            }
+            
+        }
+        return view('admin.productcategory.create');
     }
 
     /**

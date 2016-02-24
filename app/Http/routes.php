@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('dashboard', 'Admin\DashboardController@index');
 
     # Product 
-    Route::any('productcategory/show', 'Admin\ProductCategoryController@show');
+    Route::any('productcategory/create', 'Admin\ProductCategoryController@create');
     Route::any('productcategory/edit/{id}', 'Admin\ProductCategoryController@edit');
     Route::any('productcategory/delete', 'Admin\ProductCategoryController@delete');
     Route::any('productcategory', 'Admin\ProductCategoryController@index');
