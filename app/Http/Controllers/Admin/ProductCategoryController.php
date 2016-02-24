@@ -23,7 +23,8 @@ class ProductCategoryController extends AdminController {
      * @return Response
      */
     public function index() {
-        return view('admin.productcategory.index');
+        $product_category = ProductCategory::all();
+        return view('admin.productcategory.index', ['product_category' => $product_category]);
     }
 
     /**
@@ -87,24 +88,6 @@ class ProductCategoryController extends AdminController {
      */
     public function destroy(ProductCategory $productcategory) {
         $productcategory->delete();
-    }
-
-    /**
-     * Show a list of all the languages posts formatted for Datatables.
-     *
-     * @return Datatables JSON
-     */
-    public function data() {
-        $productcategory = ProductCategory::join('languages', 'languages.id', '=', 'productcategory.language_id')
-                ->select(array('productcategory.id', 'productcategory.title', 'languages.name', 'productcategory.created_at'))
-                ->orderBy('productcategory.position', 'ASC');
-
-        return Datatables::of($productcategory)
-                        ->add_column('actions', '<a href="{{{ URL::to(\'admin/productcategory/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
-                <a href="{{{ URL::to(\'admin/productcategory/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
-                <input type="hidden" name="row" value="{{$id}}" id="row">')
-                        ->remove_column('id')
-                        ->make();
     }
 
     /**
