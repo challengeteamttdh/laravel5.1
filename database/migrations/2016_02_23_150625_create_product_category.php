@@ -12,7 +12,8 @@ class CreateProductCategory extends Migration
      */
     public function up()
     {
-         Schema::create('product_category', function (Blueprint $table) {
+        Schema::dropIfExists('product_category');
+        Schema::create('product_category', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->timestamps();
