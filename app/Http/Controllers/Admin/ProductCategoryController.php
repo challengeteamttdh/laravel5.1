@@ -9,7 +9,7 @@ use App\Http\Requests\Admin\ProductCategoryRequest;
 use App\Http\Requests\Admin\DeleteRequest;
 use App\Http\Requests\Admin\ReorderRequest;
 use Illuminate\Support\Facades\Auth;
-use Datatables;
+//use Datatables;
 
 class ProductCategoryController extends AdminController {
 
@@ -54,9 +54,9 @@ class ProductCategoryController extends AdminController {
      * @param  int  $id
      * @return Response
      */
-    public function edit(ProductCategory $productcategory) {
-        $languages = Language::lists('name', 'id')->toArray();
-        return view('admin.productcategory.create_edit', compact('productcategory', 'languages'));
+    public function edit($id) {
+        $product_cate = ProductCategory::findOrFail($id);
+        return view('admin.productcategory.create_edit', array('product_cate'=>$product_cate));
     }
 
     /**

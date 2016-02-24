@@ -21,7 +21,7 @@
     </h3>
 </div>
 
-<table id="table" class="table table-striped table-hover">
+<table id="" class="table table-striped table-hover">
     <thead>
         <tr>
             <th>Tên danh mục</th>
@@ -29,7 +29,20 @@
             <th>Action</th>
         </tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
+        @if($product_category)
+            @foreach ($product_category as $rs)
+                <tr>
+                    <th>{{ $rs->name }}</th>
+                    <th>{{ $rs->created_at }}</th>
+                    <th>
+                        <a href="{!! URL::to('admin/productcategory/edit') !!}/{{ $rs->id}}">Edit</a>
+                        <a href="{!! URL::to('admin/productcategory/delete') !!}/{{ $rs->id}}">Delete</a>
+                    </th>
+                </tr>
+            @endforeach
+        @endif
+    </tbody>
 </table>
 @stop
 

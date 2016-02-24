@@ -31,12 +31,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     # Admin Dashboard
     Route::get('dashboard', 'Admin\DashboardController@index');
 
-    # Product
-    Route::get('productcategory/data', 'Admin\ProductCategoryController@data');
-    Route::get('productcategory/{language}/show', 'Admin\ProductCategoryController@show');
-    Route::get('productcategory/{language}/edit', 'Admin\ProductCategoryController@edit');
-    Route::get('productcategory/{language}/delete', 'Admin\ProductCategoryController@delete');
-    Route::resource('productcategory', 'Admin\ProductCategoryController');
+    # Product 
+    Route::any('productcategory/show', 'Admin\ProductCategoryController@show');
+    Route::any('productcategory/edit/{id}', 'Admin\ProductCategoryController@edit');
+    Route::any('productcategory/delete', 'Admin\ProductCategoryController@delete');
+    Route::any('productcategory', 'Admin\ProductCategoryController@index');
     
     # Language
     Route::get('language/data', 'Admin\LanguageController@data');
