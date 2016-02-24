@@ -32,11 +32,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('dashboard', 'Admin\DashboardController@index');
 
     # Product
-    Route::get('product/data', 'Admin\ProductCategoriesController@data');
-    Route::get('product/{language}/show', 'Admin\ProductCategoriesController@show');
-    Route::get('product/{language}/edit', 'Admin\ProductCategoriesController@edit');
-    Route::get('product/{language}/delete', 'Admin\ProductCategoriesController@delete');
-    Route::resource('product', 'Admin\ProductCategoriesController');
+    Route::get('productcategory/data', 'Admin\ProductCategoryController@data');
+    Route::get('productcategory/{language}/show', 'Admin\ProductCategoryController@show');
+    Route::get('productcategory/{language}/edit', 'Admin\ProductCategoryController@edit');
+    Route::get('productcategory/{language}/delete', 'Admin\ProductCategoryController@delete');
+    Route::resource('productcategory', 'Admin\ProductCategoryController');
     
     # Language
     Route::get('language/data', 'Admin\LanguageController@data');

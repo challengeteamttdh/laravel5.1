@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductSubCategory extends Migration
+class CreateProductTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,15 @@ class CreateProductSubCategory extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('product_sub_category');
-        Schema::create('product_sub_category', function (Blueprint $table) {
+        Schema::dropIfExists('product');
+        Schema::create('product', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('sub_category_id')->unsigned();
+            $table->foreign('sub_category_id')->references('id')->on('product_sub_category');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('product_category');
             $table->string('name');
+            $table->string('image');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +33,6 @@ class CreateProductSubCategory extends Migration
      */
     public function down()
     {
-        Schema::drop('product_sub_category');
+        Schema::drop('product');
     }
 }
