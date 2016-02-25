@@ -34,6 +34,9 @@
     <script type="text/javascript">
         $(function () {
             $('textarea').summernote({height: 250});
+            $('#create,#edit,#delete').on('submit',function(){
+                $(this).submit();
+            });
             $('form').submit(function (event) {
                 event.preventDefault();
                 var form = $(this);

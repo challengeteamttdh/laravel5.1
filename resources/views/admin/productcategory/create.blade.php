@@ -6,11 +6,7 @@
     <li class="active"><a href="#tab-general" data-toggle="tab"> General</a></li>
 </ul>
 <!-- ./ tabs -->
-@if (isset($articlecategory))
-{!! Form::model($articlecategory, array('url' => URL::to('admin/articlecategory') . '/' . $articlecategory->id, 'method' => 'put', 'class' => 'bf', 'files'=> true)) !!}
-@else
-{!! Form::open(array('url' => URL::to('admin/productcategory/create'), 'method' => 'post', 'class' => 'bf', 'files'=> true)) !!}
-@endif
+{!! Form::open(array('url' => URL::to('admin/productcategory/create'), 'method' => 'post', 'class' => 'bf', 'files'=> true,'id'=>'create')) !!}
     <!-- Tabs Content -->
     <div class="tab-content">
         <!-- General tab -->
@@ -29,9 +25,9 @@
     <!-- Form Actions -->
     <div class="form-group">
         <div class="col-md-12">
-            <button type="reset" class="btn btn-sm btn-warning close_popup">
+            <a href="{!! URL::to('admin/productcategory') !!}" class="btn btn-sm btn-warning close_popup">
                 <span class="glyphicon glyphicon-ban-circle"></span> Cancel
-            </button>
+            </a>
             <button type="reset" class="btn btn-sm btn-default">
                 <span class="glyphicon glyphicon-remove-circle"></span>Reset
             </button>
