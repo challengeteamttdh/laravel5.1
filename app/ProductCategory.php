@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ArticleCategory extends Model {
+class ProductCategory extends Model {
 
     use SoftDeletes;
 
@@ -24,21 +24,12 @@ class ArticleCategory extends Model {
     }
 
     /**
-     * Get the author.
-     *
-     * @return User
-     */
-    public function author() {
-        return $this->belongsTo('App\User');
-    }
-
-    /**
-     * Get the slider's images.
+     * Get the product of this.
      *
      * @return array
      */
-    public function articles() {
-        return $this->hasMany('App\Article');
+    public function product() {
+        return $this->hasMany('App\Product');
     }
 
     /**
@@ -49,5 +40,4 @@ class ArticleCategory extends Model {
     public function language() {
         return $this->belongsTo('App\Language');
     }
-
 }
