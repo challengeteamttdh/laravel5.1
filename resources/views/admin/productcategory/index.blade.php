@@ -1,34 +1,48 @@
 @extends('admin.layouts.default')
 
 {{-- Web site Title --}}
-@section('title') {!! trans("admin/newscategory.newscategories") !!}
+
+@section('title') Product category
 :: @parent @stop
 
 {{-- Content --}}
 @section('main')
 <div class="page-header">
     <h3>
-        {!! trans("admin/articlecategory.articlecategories") !!}
+        Product Category
         <div class="pull-right">
             <div class="pull-right">
-                <a href="{!! URL::to('admin/articlecategory/create') !!}"
-                   class="btn btn-sm  btn-primary iframe"><span
-                        class="glyphicon glyphicon-plus-sign"></span> {{ trans("admin/modal.new") }}</a>
+                <a href="{!! URL::to('admin/productcategory/create') !!}"
+                   class="btn btn-sm  btn-primary iframe">
+                    <span class="glyphicon glyphicon-plus-sign"></span>
+                    New
+                </a>
             </div>
         </div>
     </h3>
 </div>
-
-<table id="table" class="table table-striped table-hover">
+<table id="" class="table table-striped table-hover">
     <thead>
         <tr>
-            <th>{!! trans("admin/modal.title") !!}</th>
-            <th>{!! trans("admin/admin.language") !!}</th>
-            <th>{!! trans("admin/admin.created_at") !!}</th>
-            <th>{!! trans("admin/admin.action") !!}</th>
+            <th>Tên danh mục</th>
+            <th>Created at</th>
+            <th>Action</th>
         </tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
+        @if($product_category)
+            @foreach ($product_category as $rs)
+                <tr>
+                    <th>{{ $rs->name }}</th>
+                    <th>{{ $rs->created_at }}</th>
+                    <th>
+                        <a href="{!! URL::to('admin/productcategory/edit') !!}/{{ $rs->id}}">Edit</a>
+                        <a href="{!! URL::to('admin/productcategory/delete') !!}/{{ $rs->id}}">Delete</a>
+                    </th>
+                </tr>
+            @endforeach
+        @endif
+    </tbody>
 </table>
 @stop
 

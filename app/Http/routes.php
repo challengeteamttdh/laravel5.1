@@ -31,19 +31,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     # Admin Dashboard
     Route::get('dashboard', 'Admin\DashboardController@index');
 
-    # Product
-    Route::get('productcategory/data', 'Admin\ProductCategoryController@data');
-    Route::get('productcategory/{language}/show', 'Admin\ProductCategoryController@show');
-    Route::get('productcategory/{language}/edit', 'Admin\ProductCategoryController@edit');
-    Route::get('productcategory/{language}/delete', 'Admin\ProductCategoryController@delete');
-    Route::resource('productcategory', 'Admin\ProductCategoryController');
-
-    # Subcategory
-    Route::get('productsubcategory/data', 'Admin\ProductSubcategoryController@data');
-    Route::get('productsubcategory/{language}/show', 'Admin\ProductSubcategoryController@show');
-    Route::get('productsubcategory/{language}/edit', 'Admin\ProductSubcategoryController@edit');
-    Route::get('productsubcategory/{language}/delete', 'Admin\ProductSubcategoryController@delete');
-    Route::resource('productsubcategory', 'Admin\ProductSubcategoryController');
+    # Product 
+    Route::any('productcategory/create', 'Admin\ProductCategoryController@create');
+    Route::any('productcategory/edit/{id}', 'Admin\ProductCategoryController@edit');
+    Route::any('productcategory/delete/{id}', 'Admin\ProductCategoryController@delete');
+    Route::any('productcategory', 'Admin\ProductCategoryController@index');
 
     # Language
     Route::get('language/data', 'Admin\LanguageController@data');

@@ -9,7 +9,10 @@ use App\Http\Requests\Admin\ProductCategoryRequest;
 use App\Http\Requests\Admin\DeleteRequest;
 use App\Http\Requests\Admin\ReorderRequest;
 use Illuminate\Support\Facades\Auth;
-use Datatables;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Redirect;
+//use Datatables;
 
 class ProductCategoryController extends AdminController {
 
@@ -23,7 +26,8 @@ class ProductCategoryController extends AdminController {
      * @return Response
      */
     public function index() {
-        return view('admin.productcategory.index');
+        $product_category = ProductCategory::all();
+        return view('admin.productcategory.index', ['product_category' => $product_category]);
     }
 
     /**
@@ -32,8 +36,19 @@ class ProductCategoryController extends AdminController {
      * @return Response
      */
     public function create() {
-        $languages = Language::lists('name', 'id')->toArray();
-        return view('admin.productcategory.create_edit', compact('languages'));
+        if(Request::ismethod('post')){
+            $params = Input::all();
+            if(empty($params["name"])){
+                $error = 'Please enter name of category';
+            }else{
+                $product_cate = new ProductCategory();
+                $product_cate->name = $params["name"];
+                $product_cate->save();
+                return Redirect::to('admin/productcategory');
+            }
+            
+        }
+        return view('admin.productcategory.create');
     }
 
     /**
@@ -53,9 +68,21 @@ class ProductCategoryController extends AdminController {
      * @param  int  $id
      * @return Response
      */
-    public function edit(ProductCategory $productcategory) {
-        $languages = Language::lists('name', 'id')->toArray();
-        return view('admin.productcategory.create_edit', compact('productcategory', 'languages'));
+    public function edit($id) {
+        if(Request::ismethod('put')){
+            $params = Input::all();
+            if(empty($params["name"])){
+                $error = 'Please enter name of category';
+            }else{
+                $product_cate = ProductCategory::findOrFail($id);
+                $product_cate->name = $params["name"];
+                $product_cate->save();
+                return Redirect::to('admin/productcategory');
+            }
+            
+        }
+        $product_cate = ProductCategory::findOrFail($id);
+        return view('admin.productcategory.edit', array('product_cate'=>$product_cate));
     }
 
     /**
@@ -75,8 +102,18 @@ class ProductCategoryController extends AdminController {
      * @param $id
      * @return Response
      */
-    public function delete(ProductCategory $productcategory) {
-        return view('admin.productcategory.delete', compact('productcategory'));
+    public function delete($id) {
+        if(Request::ismethod('delete')){
+            if(empty($id)){
+                $error = 'error empty id';
+                die;
+            }else{
+                $product_cate = ProductCategory::findOrFail($id);
+                $product_cate->delete();
+                return Redirect::to('admin/productcategory');
+            }
+        }
+        return view('admin.productcategory.delete',array('id'=>$id));
     }
 
     /**
@@ -87,24 +124,6 @@ class ProductCategoryController extends AdminController {
      */
     public function destroy(ProductCategory $productcategory) {
         $productcategory->delete();
-    }
-
-    /**
-     * Show a list of all the languages posts formatted for Datatables.
-     *
-     * @return Datatables JSON
-     */
-    public function data() {
-        $productcategory = ProductCategory::join('languages', 'languages.id', '=', 'productcategory.language_id')
-                ->select(array('productcategory.id', 'productcategory.title', 'languages.name', 'productcategory.created_at'))
-                ->orderBy('productcategory.position', 'ASC');
-
-        return Datatables::of($productcategory)
-                        ->add_column('actions', '<a href="{{{ URL::to(\'admin/productcategory/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
-                <a href="{{{ URL::to(\'admin/productcategory/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
-                <input type="hidden" name="row" value="{{$id}}" id="row">')
-                        ->remove_column('id')
-                        ->make();
     }
 
     /**

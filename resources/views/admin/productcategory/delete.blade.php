@@ -1,17 +1,16 @@
 @extends('admin.layouts.modal')
 @section('content')
-	{!! Form::model($articlecategory, array('url' => URL::to('admin/articlecategory') . '/' . $articlecategory->id, 'method' => 'delete', 'class' => 'bf', 'files'=> true)) !!}
-	<div class="form-group">
-		<div class="controls">
-			{{ trans("admin/modal.delete_message") }}<br>
-			<element class="btn btn-warning btn-sm close_popup">
-				<span class="glyphicon glyphicon-ban-circle"></span> {{
-			trans("admin/modal.cancel") }}</element>
-			<button type="submit" class="btn btn-sm btn-danger">
-				<span class="glyphicon glyphicon-trash"></span> {{
-				trans("admin/modal.delete") }}
-			</button>
-		</div>
-	</div>
-	{!! Form::close() !!}
+{!! Form::model($id, array('url' => URL::to('admin/productcategory/delete') . '/' . $id, 'method' => 'delete', 'files'=> true,'id'=>'delete')) !!}
+    <div class="form-group">
+        <div class="controls">
+            Did you want to delete this item?<br>
+            <a href="{!! URL::to('admin/productcategory') !!}" class="btn btn-sm btn-warning close_popup">
+                <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+            </a>
+            <button type="submit" class="btn btn-sm btn-danger">
+                <span class="glyphicon glyphicon-trash"></span> Delete
+            </button>
+        </div>
+    </div>
+{!! Form::close() !!}
 @stop

@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ProductCategory extends Model {
 
     use SoftDeletes;
-
     protected $dates = ['deleted_at'];
     protected $guarded = array('id');
 
