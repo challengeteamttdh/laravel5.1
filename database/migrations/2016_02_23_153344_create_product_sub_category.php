@@ -15,6 +15,7 @@ class CreateProductSubCategory extends Migration
         Schema::dropIfExists('product_sub_category');
         Schema::create('product_sub_category', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('unique_code', 255)->unique()->nullable();
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('product_category');
             $table->string('name');

@@ -15,6 +15,7 @@ class CreateProductCategory extends Migration
         Schema::dropIfExists('product_category');
         Schema::create('product_category', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('unique_code', 255)->unique()->nullable();
             $table->string('name');
             $table->timestamps();
             $table->softDeletes();

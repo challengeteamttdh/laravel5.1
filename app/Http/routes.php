@@ -31,11 +31,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     # Admin Dashboard
     Route::get('dashboard', 'Admin\DashboardController@index');
 
-    # Product 
+    # Product Category
     Route::any('productcategory/create', 'Admin\ProductCategoryController@create');
     Route::any('productcategory/edit/{id}', 'Admin\ProductCategoryController@edit');
     Route::any('productcategory/delete/{id}', 'Admin\ProductCategoryController@delete');
     Route::any('productcategory', 'Admin\ProductCategoryController@index');
+   
+    # Product
+    Route::any('product/create', 'Admin\ProductController@create');
+    Route::any('product/edit/{id}', 'Admin\ProductController@edit');
+    Route::any('product/delete/{id}', 'Admin\ProductController@delete');
+    Route::any('product', 'Admin\ProductController@index');
     
     # Language
     Route::get('language/data', 'Admin\LanguageController@data');

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ProductCategory extends Model {
+class ProductCategory extends Entity {
 
     use SoftDeletes;
     protected $table = 'product_category';
