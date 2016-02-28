@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ProductSubCategory extends Model
+class ProductSubCategory extends Entity
 {
     use SoftDeletes;
 
