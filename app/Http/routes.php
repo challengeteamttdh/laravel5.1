@@ -51,6 +51,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('productsubcategory/reorder', 'ProductSubcategoryController@getReorder');
     Route::resource('productsubcategory', 'Admin\ProductSubcategoryController');
 
+    # Product
+    Route::any('product/create', 'Admin\ProductController@create');
+    Route::any('product/edit/{id}', 'Admin\ProductController@edit');
+    Route::any('product/delete/{id}', 'Admin\ProductController@delete');
+    Route::any('product', 'Admin\ProductController@index');
+
     # Language
     Route::get('language/data', 'Admin\LanguageController@data');
     Route::get('language/{language}/show', 'Admin\LanguageController@show');
