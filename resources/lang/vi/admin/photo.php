@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'photo' => 'Photos',
+    'photo' => 'Ảnh',
     'album' =>  'Album',
     'album_cover' => 'Album cover',
     'slider' => 'Slider',

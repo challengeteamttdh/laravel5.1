@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'article' => 'Article',
-    'introduction' => 'Introduction',
-    'content' => 'Content',
-    'source' => 'Source',
-    'picture' => 'Picture',
-    'category' => 'Category',
+    'article' => 'Bài viết',
+    'introduction' => 'Giới thiệu',
+    'content' => 'Nội dung',
+    'source' => 'Nguồn',
+    'picture' => 'Ảnh',
+    'category' => 'Danh mục',
 
 ];

@@ -7,6 +7,7 @@ Route::model('language', 'App\Language');
 Route::model('photoalbum', 'App\PhotoAlbum');
 Route::model('photo', 'App\Photo');
 Route::model('user', 'App\User');
+Route::model('productsubcategory', 'App\ProductSubCategory');
 Route::pattern('id', '[0-9]+');
 Route::pattern('slug', '[0-9a-z-_]+');
 
@@ -20,6 +21,11 @@ Route::get('article/{slug}', 'ArticlesController@show');
 Route::get('video/{id}', 'VideoController@show');
 Route::get('photo/{id}', 'PhotoController@show');
 
+Route::get('language/{lang}', function($lang){
+    Session::put('locale', $lang);
+    return redirect('about');
+});
+
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
@@ -31,11 +37,19 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     # Admin Dashboard
     Route::get('dashboard', 'Admin\DashboardController@index');
 
-    # Product 
+    # Product Category
     Route::any('productcategory/create', 'Admin\ProductCategoryController@create');
     Route::any('productcategory/edit/{id}', 'Admin\ProductCategoryController@edit');
     Route::any('productcategory/delete/{id}', 'Admin\ProductCategoryController@delete');
     Route::any('productcategory', 'Admin\ProductCategoryController@index');
+
+    # Product SubCategory
+    Route::get('productsubcategory/data', 'Admin\ProductSubcategoryController@data');
+    Route::get('productsubcategory/{productsubcategory}/show', 'Admin\ProductSubcategoryController@show');
+    Route::get('productsubcategory/{productsubcategory}/edit', 'Admin\ProductSubcategoryController@edit');
+    Route::get('productsubcategory/{productsubcategory}/delete', 'Admin\ProductSubcategoryController@delete');
+    Route::get('productsubcategory/reorder', 'ProductSubcategoryController@getReorder');
+    Route::resource('productsubcategory', 'Admin\ProductSubcategoryController');
 
     # Language
     Route::get('language/data', 'Admin\LanguageController@data');

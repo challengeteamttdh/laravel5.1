@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\AdminController;
 use App\Article;
-use App\ArticleCategory;
+use App\Http\Requests\Admin\ProductSubCategoryRequest;
+use App\ProductSubCategory;
+use App\ProductCategory;
 use App\Language;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests\Admin\ArticleRequest;
@@ -15,17 +17,16 @@ class ProductSubcategoryController extends AdminController
 {
     public function __construct()
     {
-        view()->share('type', 'subcategory');
+        view()->share('type', 'productsubcategory');
     }
-    /*
-   * Display a listing of the resource.
-   *
-   * @return Response
-   */
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
     public function index()
     {
-        // Show the page
-        return view('admin.article.index');
+        return view('admin.productsubcategory.index');
     }
 
     /**
@@ -35,9 +36,8 @@ class ProductSubcategoryController extends AdminController
      */
     public function create()
     {
-        $languages = Language::lists('name', 'id')->toArray();
-        $articlecategories = ArticleCategory::lists('title', 'id')->toArray();
-        return view('admin.article.create_edit', compact('languages', 'articlecategories'));
+        $productcategory = ProductCategory::lists('name', 'id')->toArray();
+        return view('admin.productsubcategory.create_edit', compact('productcategory'));
     }
 
     /**
@@ -45,27 +45,11 @@ class ProductSubcategoryController extends AdminController
      *
      * @return Response
      */
-    public function store(ArticleRequest $request)
+    public function store(ProductSubCategoryRequest $request)
     {
-        $article = new Article($request->except('image'));
-        $article -> user_id = Auth::id();
-
-        $picture = "";
-        if(Input::hasFile('image'))
-        {
-            $file = Input::file('image');
-            $filename = $file->getClientOriginalName();
-            $extension = $file -> getClientOriginalExtension();
-            $picture = sha1($filename . time()) . '.' . $extension;
-        }
-        $article -> picture = $picture;
-        $article -> save();
-
-        if(Input::hasFile('image'))
-        {
-            $destinationPath = public_path() . '/images/article/'.$article->id.'/';
-            Input::file('image')->move($destinationPath, $picture);
-        }
+        $productsubcategory = new ProductSubCategory($request->all());
+        $productsubcategory -> user_id = Auth::id();
+        $productsubcategory -> save();
     }
     /**
      * Show the form for editing the specified resource.
@@ -73,11 +57,10 @@ class ProductSubcategoryController extends AdminController
      * @param  int  $id
      * @return Response
      */
-    public function edit(Article $article)
+    public function edit(ProductSubCategory $productsubcategory)
     {
-        $languages = Language::lists('name', 'id')->toArray();
-        $articlecategories = ArticleCategory::lists('title', 'id')->toArray();
-        return view('admin.article.create_edit',compact('article','languages','articlecategories'));
+        $productcategory = ProductCategory::lists('name', 'id')->toArray();
+        return view('admin.productsubcategory.create_edit', compact('productsubcategory', 'productcategory'));
     }
 
     /**
@@ -86,25 +69,10 @@ class ProductSubcategoryController extends AdminController
      * @param  int  $id
      * @return Response
      */
-    public function update(ArticleRequest $request, Article $article)
+    public function update(ProductSubCategoryRequest $request, ProductSubCategory $productsubcategory)
     {
-        $article -> user_id = Auth::id();
-        $picture = "";
-        if(Input::hasFile('image'))
-        {
-            $file = Input::file('image');
-            $filename = $file->getClientOriginalName();
-            $extension = $file -> getClientOriginalExtension();
-            $picture = sha1($filename . time()) . '.' . $extension;
-        }
-        $article -> picture = $picture;
-        $article -> update($request->except('image'));
-
-        if(Input::hasFile('image'))
-        {
-            $destinationPath = public_path() . '/images/article/'.$article->id.'/';
-            Input::file('image')->move($destinationPath, $picture);
-        }
+        $productsubcategory -> user_id_edited = Auth::id();
+        $productsubcategory -> update($request->all());
     }
 
     /**
@@ -114,9 +82,9 @@ class ProductSubcategoryController extends AdminController
      * @return Response
      */
 
-    public function delete(Article $article)
+    public function delete(ProductSubCategory $productsubcategory)
     {
-        return view('admin.article.delete', compact('article'));
+        return view('admin.productsubcategory.delete', compact('productsubcategory'));
     }
 
     /**
@@ -125,11 +93,10 @@ class ProductSubcategoryController extends AdminController
      * @param $id
      * @return Response
      */
-    public function destroy(Article $article)
+    public function destroy(ProductSubCategory $productsubcategory)
     {
-        $article->delete();
+        $productsubcategory->delete();
     }
-
 
     /**
      * Show a list of all the languages posts formatted for Datatables.
@@ -138,16 +105,37 @@ class ProductSubcategoryController extends AdminController
      */
     public function data()
     {
-        $article = Article::join('languages', 'languages.id', '=', 'articles.language_id')
-            ->join('article_categories', 'article_categories.id', '=', 'articles.article_category_id')
-            ->select(array('articles.id','articles.title','article_categories.title as category', 'languages.name',
-                'articles.created_at'));
-        return Datatables::of($article)
-            ->add_column('actions', '<a href="{{{ URL::to(\'admin/article/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
-                    <a href="{{{ URL::to(\'admin/article/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
-                    <input type="hidden" name="row" value="{{$id}}" id="row">')
-            ->remove_column('id')
+        $productsubcategory = ProductSubCategory::join('product_category', 'product_category.id', '=', 'product_sub_category.category_id')
+            ->select(array('product_sub_category.id','product_sub_category.name','product_category.name as category',
+                'product_sub_category.created_at'));
+//        $article_categories = ArticleCategory::join('languages', 'languages.id', '=', 'article_categories.language_id')
+//            ->select(array('article_categories.id','article_categories.title', 'languages.name', 'article_categories.created_at'))
+//            ->orderBy('article_categories.position', 'ASC');
 
+        return Datatables::of($productsubcategory)
+            ->add_column('actions', '<a href="{{{ URL::to(\'admin/productsubcategory/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
+                <a href="{{{ URL::to(\'admin/productsubcategory/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
+                <input type="hidden" name="row" value="{{$id}}" id="row">')
+            ->remove_column('id')
             ->make();
+    }
+
+    /**
+     * Reorder items
+     *
+     * @param items list
+     * @return items from @param
+     */
+    public function getReorder(ReorderRequest $request) {
+        $list = $request->list;
+        $items = explode(",", $list);
+        $order = 1;
+        foreach ($items as $value) {
+            if ($value != '') {
+                ArticleCategory::where('id', '=', $value) -> update(array('position' => $order));
+                $order++;
+            }
+        }
+        return $list;
     }
 }

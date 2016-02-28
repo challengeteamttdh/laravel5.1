@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Test website</a>
+            <a class="navbar-brand" href="#">Nội thất Ngọc Dũng</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -28,6 +28,13 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{trans("common.language")}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ URL::to('language/en') }}">{{trans("common.en")}}</a></li>
+                        <li><a href="{{ URL::to('language/vi') }}">{{trans("common.vi")}}</a></li>
+                    </ul>
+                </li>
                 @if (Auth::guest())
                     <li class="{{ (Request::is('auth/login') ? 'active' : '') }}"><a href="{{ URL::to('auth/login') }}"><i
                                     class="fa fa-sign-in"></i> Login</a></li>

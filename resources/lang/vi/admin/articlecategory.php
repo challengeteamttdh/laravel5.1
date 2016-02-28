@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'articlecategories' => 'Article categories',
+    'articlecategories' => 'Danh mục bài viết',
 
 
 ];

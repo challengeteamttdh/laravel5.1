@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'create' => 'Create',
-    'edit' => 'Edit',
-    'reset' => 'Reset',
-    'cancel' => 'Cancel',
-    'general' => 'General',
-    'title' => 'Title',
-    'new' => 'New',
-    'delete' => 'Delete',
-    'items' => 'Items',
-    'delete_message' => 'Did you want to delete this item?',
+    'create' => 'Thêm mới',
+    'edit' => 'Sửa',
+    'reset' => 'Làm rỗng',
+    'cancel' => 'Hủy bỏ',
+    'general' => 'Trang chính',
+    'title' => 'Tiêu đề',
+    'new' => 'Thêm',
+    'delete' => 'Xóa',
+    'items' => 'Mục',
+    'delete_message' => 'Bạn có muốn xóa mục này không?',
 ];
