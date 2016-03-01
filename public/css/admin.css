@@ -23057,3 +23057,7 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+li {
+  margin-left:15px;
+}
