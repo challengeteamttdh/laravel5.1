@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Laravel V5.1</a>
+        <a class="navbar-brand" href="{{ URL::to('admin/dashboard') }}">Trang quản trị</a>
     </div>
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
@@ -38,6 +38,11 @@
                         <li>
                             <a href="{{url('admin/product')}}">
                                 <i class="glyphicon glyphicon-bullhorn"></i> List Product
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/productsubcategory')}}">
+                                <i class="glyphicon glyphicon-list"></i> Sub Categories
                             </a>
                         </li>
                     </ul>

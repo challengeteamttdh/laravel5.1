@@ -7,6 +7,7 @@ Route::model('language', 'App\Language');
 Route::model('photoalbum', 'App\PhotoAlbum');
 Route::model('photo', 'App\Photo');
 Route::model('user', 'App\User');
+Route::model('productsubcategory', 'App\ProductSubCategory');
 Route::pattern('id', '[0-9]+');
 Route::pattern('slug', '[0-9a-z-_]+');
 
@@ -19,6 +20,11 @@ Route::get('articles', 'ArticlesController@index');
 Route::get('article/{slug}', 'ArticlesController@show');
 Route::get('video/{id}', 'VideoController@show');
 Route::get('photo/{id}', 'PhotoController@show');
+
+Route::get('language/{lang}', function($lang){
+    Session::put('locale', $lang);
+    return redirect('about');
+});
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
@@ -36,13 +42,21 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::any('productcategory/edit/{id}', 'Admin\ProductCategoryController@edit');
     Route::any('productcategory/delete/{id}', 'Admin\ProductCategoryController@delete');
     Route::any('productcategory', 'Admin\ProductCategoryController@index');
-   
+
+    # Product SubCategory
+    Route::get('productsubcategory/data', 'Admin\ProductSubcategoryController@data');
+    Route::get('productsubcategory/{productsubcategory}/show', 'Admin\ProductSubcategoryController@show');
+    Route::get('productsubcategory/{productsubcategory}/edit', 'Admin\ProductSubcategoryController@edit');
+    Route::get('productsubcategory/{productsubcategory}/delete', 'Admin\ProductSubcategoryController@delete');
+    Route::get('productsubcategory/reorder', 'ProductSubcategoryController@getReorder');
+    Route::resource('productsubcategory', 'Admin\ProductSubcategoryController');
+
     # Product
     Route::any('product/create', 'Admin\ProductController@create');
     Route::any('product/edit/{id}', 'Admin\ProductController@edit');
     Route::any('product/delete/{id}', 'Admin\ProductController@delete');
     Route::any('product', 'Admin\ProductController@index');
-    
+
     # Language
     Route::get('language/data', 'Admin\LanguageController@data');
     Route::get('language/{language}/show', 'Admin\LanguageController@show');

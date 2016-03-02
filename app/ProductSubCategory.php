@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ProductCategory extends Entity {
-
+class ProductSubCategory extends Entity
+{
     use SoftDeletes;
+
     protected $dates = ['deleted_at'];
     protected $guarded = array('id');
-    public $table = "product_category";
+    public $table = "product_sub_category";
+
     /**
      * Returns a formatted post content entry,
      * this ensures that line breaks are returned.
@@ -32,12 +34,13 @@ class ProductCategory extends Entity {
     }
 
     /**
-     * Get the product of this.
+     * Get the product category of this.
      *
-     * @return array
+     * @return Category
      */
-    public function subcategory() {
-        return $this->hasMany('App\ProductSubCategory');
+    public function category()
+    {
+        return $this->belongsTo('App\ProductCategory');
     }
 
     /**

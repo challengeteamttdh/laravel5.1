@@ -18,6 +18,11 @@ class CreateProductSubCategory extends Migration
             $table->string('unique_code', 255)->unique()->nullable();
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('product_category');
+            $table->integer('position')->nullable();
+            $table->unsignedInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+            $table->unsignedInteger('user_id_edited')->nullable();
+            $table->foreign('user_id_edited')->references('id')->on('users')->onDelete('set null');
             $table->string('name');
             $table->timestamps();
             $table->softDeletes();

@@ -1,7 +1,8 @@
 @extends('admin.layouts.default')
 
 {{-- Web site Title --}}
-@section('title') Product category 
+
+@section('title') Product category
 :: @parent @stop
 
 {{-- Content --}}
@@ -20,7 +21,6 @@
         </div>
     </h3>
 </div>
-
 <table id="" class="table table-striped table-hover">
     <thead>
         <tr>
