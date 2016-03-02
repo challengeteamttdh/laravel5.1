@@ -12,37 +12,52 @@
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <li>
-                    <a href="{{ URL::to('') }}"><i class="fa fa-backward"></i> Go to frontend</a>
+                    <a href="{{ URL::to('') }}"><i class="fa fa-backward"></i> {{trans('admin/nav.home')}}</a>
                 </li>
                 <li>
                     <a href="{{url('admin/dashboard')}}">
-                        <i class="fa fa-dashboard fa-fw"></i> Dashboard
+                        <i class="fa fa-dashboard fa-fw"></i> {{trans('admin/nav.dashboard')}}
                     </a>
                 </li>
                 <li>
                     <a href="{{url('admin/language')}}">
-                        <i class="fa fa-language"></i> Language
+                        <i class="fa fa-language"></i> {{trans('admin/nav.language')}}
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="glyphicon glyphicon-bullhorn"></i> Product
+                        <i class="glyphicon glyphicon-bullhorn"></i> {{trans('admin/nav.pdm')}}
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav collapse">
                         <li>
                             <a href="{{url('admin/productcategory')}}">
-                                <i class="glyphicon glyphicon-list"></i>  Product categories
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{url('admin/product')}}">
-                                <i class="glyphicon glyphicon-bullhorn"></i> List Product
+                                <i class="glyphicon glyphicon-list"></i> {{trans('admin/nav.pdc')}}
                             </a>
                         </li>
                         <li>
                             <a href="{{url('admin/productsubcategory')}}">
-                                <i class="glyphicon glyphicon-list"></i> Sub Categories
+                                <i class="glyphicon glyphicon-list"></i> {{trans('admin/nav.pdsc')}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/color')}}">
+                                <i class="glyphicon glyphicon-bullhorn"></i> {{trans('admin/nav.color')}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/material')}}">
+                                <i class="glyphicon glyphicon-bullhorn"></i> {{trans('admin/nav.material')}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/producer')}}">
+                                <i class="glyphicon glyphicon-bullhorn"></i> {{trans('admin/nav.producer')}}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/product')}}">
+                                <i class="glyphicon glyphicon-bullhorn"></i> {{trans('admin/nav.pd')}}
                             </a>
                         </li>
                     </ul>

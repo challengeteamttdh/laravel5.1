@@ -8,6 +8,10 @@ Route::model('photoalbum', 'App\PhotoAlbum');
 Route::model('photo', 'App\Photo');
 Route::model('user', 'App\User');
 Route::model('productsubcategory', 'App\ProductSubCategory');
+Route::model('color', 'App\Color');
+Route::model('material', 'App\Material');
+Route::model('producer', 'App\Producer');
+Route::model('product', 'App\Product');
 Route::pattern('id', '[0-9]+');
 Route::pattern('slug', '[0-9a-z-_]+');
 
@@ -100,4 +104,34 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('user/{user}/edit', 'Admin\UserController@edit');
     Route::get('user/{user}/delete', 'Admin\UserController@delete');
     Route::resource('user', 'Admin\UserController');
+
+    # Colors
+    Route::get('color/data', 'Admin\ColorController@data');
+    Route::get('color/{color}/show', 'Admin\ColorController@show');
+    Route::get('color/{color}/edit', 'Admin\ColorController@edit');
+    Route::get('color/{color}/delete', 'Admin\ColorController@delete');
+    Route::resource('color', 'Admin\ColorController');
+
+    # Producer
+    Route::get('producer/data', 'Admin\ProducerController@data');
+    Route::get('producer/{producer}/show', 'Admin\ProducerController@show');
+    Route::get('producer/{producer}/edit', 'Admin\ProducerController@edit');
+    Route::get('producer/{producer}/delete', 'Admin\ProducerController@delete');
+    Route::resource('producer', 'Admin\ProducerController');
+
+    # Material
+    Route::get('material/data', 'Admin\MaterialController@data');
+    Route::get('material/{material}/show', 'Admin\MaterialController@show');
+    Route::get('material/{material}/edit', 'Admin\MaterialController@edit');
+    Route::get('material/{material}/delete', 'Admin\MaterialController@delete');
+    Route::resource('material', 'Admin\MaterialController');
+
+    # Articles
+    Route::get('product/data', 'Admin\ProductController@data');
+    Route::get('product/{product}/show', 'Admin\ProductController@show');
+    Route::get('product/{product}/edit', 'Admin\ProductController@edit');
+    Route::get('product/{product}/delete', 'Admin\ProductController@delete');
+    Route::get('product/reorder', 'Admin\ProductController@getReorder');
+    Route::resource('product', 'Admin\ProductController');
+
 });

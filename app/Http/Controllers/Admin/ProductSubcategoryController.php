@@ -108,9 +108,6 @@ class ProductSubcategoryController extends AdminController
         $productsubcategory = ProductSubCategory::join('product_category', 'product_category.id', '=', 'product_sub_category.category_id')
             ->select(array('product_sub_category.id','product_sub_category.name','product_category.name as category',
                 'product_sub_category.created_at'));
-//        $article_categories = ArticleCategory::join('languages', 'languages.id', '=', 'article_categories.language_id')
-//            ->select(array('article_categories.id','article_categories.title', 'languages.name', 'article_categories.created_at'))
-//            ->orderBy('article_categories.position', 'ASC');
 
         return Datatables::of($productsubcategory)
             ->add_column('actions', '<a href="{{{ URL::to(\'admin/productsubcategory/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>

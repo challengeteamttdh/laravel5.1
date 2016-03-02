@@ -2,32 +2,36 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\ProductCategory;
+use App\Color;
+use App\Material;
+use App\Producer;
+use App\Product;
 use App\Language;
 use App\Http\Controllers\AdminController;
-use App\Http\Requests\Admin\ProductCategoryRequest;
+use App\Http\Requests\Admin\ProductRequest;
 use App\Http\Requests\Admin\DeleteRequest;
 use App\Http\Requests\Admin\ReorderRequest;
+use App\ProductSubCategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Redirect;
-//use Datatables;
+use Datatables;
 
-class ProductCategoryController extends AdminController {
-
-    public function __construct() {
-        view()->share('type', 'productcategory');
+class ProductController extends AdminController {
+    public function __construct()
+    {
+        view()->share('type', 'product');
     }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index() {
-        $product_category = ProductCategory::all();
-        return view('admin.productcategory.index', ['product_category' => $product_category]);
+    /*
+   * Display a listing of the resource.
+   *
+   * @return Response
+   */
+    public function index()
+    {
+        // Show the page
+        return view('admin.product.index');
     }
 
     /**
@@ -35,20 +39,13 @@ class ProductCategoryController extends AdminController {
      *
      * @return Response
      */
-    public function create() {
-        if(Request::ismethod('post')){
-            $params = Input::all();
-            if(empty($params["name"])){
-                $error = 'Please enter name of category';
-            }else{
-                $product_cate = new ProductCategory();
-                $product_cate->name = $params["name"];
-                $product_cate->save();
-                return Redirect::to('admin/productcategory');
-            }
-            
-        }
-        return view('admin.productcategory.create');
+    public function create()
+    {
+        $productsubcategory = ProductSubCategory::lists('name', 'id')->toArray();
+        $color = Color::lists('name', 'id')->toArray();
+        $material = Material::lists('name', 'id')->toArray();
+        $producer = Producer::lists('name', 'id')->toArray();
+        return view('admin.product.create_edit', compact('productsubcategory', 'color', 'material', 'producer'));
     }
 
     /**
@@ -56,33 +53,41 @@ class ProductCategoryController extends AdminController {
      *
      * @return Response
      */
-    public function store(ProductCategoryRequest $request) {
-        $productcategory = new ProductCategory($request->all());
-        $productcategory->user_id = Auth::id();
-        $productcategory->save();
-    }
+    public function store(ProductRequest $request)
+    {
+        $product = new Product($request->except('image'));
+        $product -> user_id = Auth::id();
 
+        $picture = "";
+        if(Input::hasFile('image'))
+        {
+            $file = Input::file('image');
+            $filename = $file->getClientOriginalName();
+            $extension = $file -> getClientOriginalExtension();
+            $picture = sha1($filename . time()) . '.' . $extension;
+        }
+        $product -> picture = $picture;
+        $product -> save();
+
+        if(Input::hasFile('image'))
+        {
+            $destinationPath = public_path() . '/images/product/'.$product->id.'/';
+            Input::file('image')->move($destinationPath, $picture);
+        }
+    }
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return Response
      */
-    public function edit($id) {
-        if(Request::ismethod('put')){
-            $params = Input::all();
-            if(empty($params["name"])){
-                $error = 'Please enter name of category';
-            }else{
-                $product_cate = ProductCategory::findOrFail($id);
-                $product_cate->name = $params["name"];
-                $product_cate->save();
-                return Redirect::to('admin/productcategory');
-            }
-            
-        }
-        $product_cate = ProductCategory::findOrFail($id);
-        return view('admin.productcategory.edit', array('product_cate'=>$product_cate));
+    public function edit(Product $product)
+    {
+        $productsubcategory = ProductSubCategory::lists('name', 'id')->toArray();
+        $color = Color::lists('name', 'id')->toArray();
+        $material = Material::lists('name', 'id')->toArray();
+        $producer = Producer::lists('name', 'id')->toArray();
+        return view('admin.product.create_edit', compact('product', 'productsubcategory', 'color', 'material', 'producer'));
     }
 
     /**
@@ -91,9 +96,25 @@ class ProductCategoryController extends AdminController {
      * @param  int  $id
      * @return Response
      */
-    public function update(ProductCategoryRequest $request, ProductCategory $productcategory) {
-        $productcategory->user_id_edited = Auth::id();
-        $productcategory->update($request->all());
+    public function update(ProductRequest $request, Product $product)
+    {
+        $product -> user_id = Auth::id();
+        $picture = "";
+        if(Input::hasFile('image'))
+        {
+            $file = Input::file('image');
+            $filename = $file->getClientOriginalName();
+            $extension = $file -> getClientOriginalExtension();
+            $picture = sha1($filename . time()) . '.' . $extension;
+        }
+        $product -> picture = $picture;
+        $product -> update($request->except('image'));
+
+        if(Input::hasFile('image'))
+        {
+            $destinationPath = public_path() . '/images/product/'.$product->id.'/';
+            Input::file('image')->move($destinationPath, $picture);
+        }
     }
 
     /**
@@ -102,18 +123,10 @@ class ProductCategoryController extends AdminController {
      * @param $id
      * @return Response
      */
-    public function delete($id) {
-        if(Request::ismethod('delete')){
-            if(empty($id)){
-                $error = 'error empty id';
-                die;
-            }else{
-                $product_cate = ProductCategory::findOrFail($id);
-                $product_cate->delete();
-                return Redirect::to('admin/productcategory');
-            }
-        }
-        return view('admin.productcategory.delete',array('id'=>$id));
+
+    public function delete(Product $product)
+    {
+        return view('admin.product.delete', compact('product'));
     }
 
     /**
@@ -122,27 +135,28 @@ class ProductCategoryController extends AdminController {
      * @param $id
      * @return Response
      */
-    public function destroy(ProductCategory $productcategory) {
-        $productcategory->delete();
+    public function destroy(Product $product)
+    {
+        $product->forceDelete();
     }
+
 
     /**
-     * Reorder items
+     * Show a list of all the languages posts formatted for Datatables.
      *
-     * @param items list
-     * @return items from @param
+     * @return Datatables JSON
      */
-    public function getReorder(ReorderRequest $request) {
-        $list = $request->list;
-        $items = explode(",", $list);
-        $order = 1;
-        foreach ($items as $value) {
-            if ($value != '') {
-                ProductCategory::where('id', '=', $value)->update(array('position' => $order));
-                $order++;
-            }
-        }
-        return $list;
-    }
+    public function data()
+    {
+        $product = Product::join('product_sub_category', 'product_sub_category.id', '=', 'products.sub_category_id')
+            ->select(array('products.id','products.title','product_sub_category.name as category',
+                'products.created_at'));
+        return Datatables::of($product)
+            ->add_column('actions', '<a href="{{{ URL::to(\'admin/product/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
+                    <a href="{{{ URL::to(\'admin/product/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
+                    <input type="hidden" name="row" value="{{$id}}" id="row">')
+            ->remove_column('id')
 
+            ->make();
+    }
 }

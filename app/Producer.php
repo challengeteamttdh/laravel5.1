@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Product extends Entity
+class Producer extends Entity
 {
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $guarded = array('id');
+    protected $guarded  = array('id');
 
     /**
      * Returns a formatted post content entry,
@@ -19,19 +19,8 @@ class Product extends Entity
      *
      * @return string
      */
-    public function content()
-    {
-        return nl2br($this->content);
+    public function description() {
+        return nl2br($this->description);
     }
 
-    /**
-     * Get the category's language.
-     *
-     * @return Language
-     */
-    
-    public function productSubCategory() {
-        return $this->belongsTo('App\ProductSubCategory');
-    }
-    
 }
