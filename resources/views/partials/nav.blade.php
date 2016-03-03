@@ -67,42 +67,42 @@
 
 
 <nav class="navbar navbar-default">  
-                <div class="container-fluid">
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse menu-bar" id="bs-example-navbar-collapse-1 ">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Trang Chủ <span class="sr-only">(current)</span></a></li>\
-                            <li><a href="#">Giới Thiệu</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tủ Bếp </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Tủ bếp gỗ xoan đào</a></li>
-                                    <li><a href="#">Tủ bếp gỗ sồi Nga</a></li>
-                                    <li><a href="#">Tủ bếp gỗ công nghiệp</a></li>			            
-                                    <li><a href="#">Bàn ghế ăn</a></li>			            			            
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Thiết bị bếp </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Máy hút mùi</a></li>
-                                    <li><a href="#">Bếp ga, bếp từ</a></li>
-                                    <li><a href="#">Chậu rửa,vòi rửa</a></li>					            
-                                    <li><a href="#">Kính ốp bếp</a></li>					            
-                                    <li><a href="#">Phụ kiện tủ bếp</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Xu hướng hiện nay </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Xu hướng chọn tủ bếp</a></li>					           
-                                </ul>
-                            </li>
-                            <li><a href="#">Báo giá tủ bếp</a></li>
-                            <li><a href="#">Tin tức</a></li>
-                            <li><a href="#">Liên hệ</a></li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
+    <div class="container-fluid">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse menu-bar" id="bs-example-navbar-collapse-1 ">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Trang Chủ <span class="sr-only">(current)</span></a></li>\
+                <li><a href="#">Giới Thiệu</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tủ Bếp </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Tủ bếp gỗ xoan đào</a></li>
+                        <li><a href="#">Tủ bếp gỗ sồi Nga</a></li>
+                        <li><a href="#">Tủ bếp gỗ công nghiệp</a></li>			            
+                        <li><a href="#">Bàn ghế ăn</a></li>			            			            
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Thiết bị bếp </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Máy hút mùi</a></li>
+                        <li><a href="#">Bếp ga, bếp từ</a></li>
+                        <li><a href="#">Chậu rửa,vòi rửa</a></li>					            
+                        <li><a href="#">Kính ốp bếp</a></li>					            
+                        <li><a href="#">Phụ kiện tủ bếp</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Xu hướng hiện nay </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Xu hướng chọn tủ bếp</a></li>					           
+                    </ul>
+                </li>
+                <li><a href="#">Báo giá tủ bếp</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
 
-                </div><!-- /.container-fluid -->
-            </nav>
+    </div><!-- /.container-fluid -->
+</nav>
