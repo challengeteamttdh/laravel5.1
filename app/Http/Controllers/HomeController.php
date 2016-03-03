@@ -30,10 +30,14 @@ class HomeController extends Controller {
         $product_sub_cate = ProductSubCategory::all()->toArray();
         $left = array();
         foreach ($product_cate as $key => $cate) {
+            $left[$key]['cate']= $cate;
             foreach ($product_sub_cate as $key => $subcate) {
-//                $product_cate[$key][]
+                if($subcate['category_id'] == $cate['id']){
+                   $left[$key]['subcate'][$key] = $subcate;
+                }
             }
         }
+        dd($left);
         
         
         
