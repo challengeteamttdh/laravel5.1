@@ -41,8 +41,11 @@ class HomeController extends Controller {
             }
         }
         //get data product and category for home page
-        dd(ProductCategory::find(1)->subcategory);
-        
+//        dd(ProductCategory::all());
+        foreach (ProductCategory::all() as $value) {
+            var_dump($value->subcategory);
+        }
+        die;
         return view('pages.home', compact('articles', 'photoAlbums','product_cate','productAndSubProduct'));
     }
 
