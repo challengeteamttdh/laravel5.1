@@ -28,20 +28,17 @@ class HomeController extends Controller {
                 ))->limit(8)->get();
         $product_cate = ProductCategory::all()->toArray();
         $product_sub_cate = ProductSubCategory::all()->toArray();
-        $left = array();
+        $productAndSubProduct = array();
         foreach ($product_cate as $key => $cate) {
-            $left[$key]['cate']= $cate;
-            foreach ($product_sub_cate as $key => $subcate) {
+            $productAndSubProduct[$key]['cate']= $cate;
+            foreach ($product_sub_cate as $key2 => $subcate) {
                 if($subcate['category_id'] == $cate['id']){
-                   $left[$key]['subcate'][$key] = $subcate;
+                    $productAndSubProduct[$key]['cate']['subcate'][$key2] = $subcate;
                 }
             }
         }
-        dd($left);
         
-        
-        
-        return view('pages.home', compact('articles', 'photoAlbums','product_cate'));
+        return view('pages.home', compact('articles', 'photoAlbums','product_cate','productAndSubProduct'));
     }
 
 }
