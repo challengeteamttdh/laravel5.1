@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
-class ProductCategorySeeder extends Seeder
+class ProducerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,8 +14,8 @@ class ProductCategorySeeder extends Seeder
     {
         $faker = Faker::create();
         foreach (range(1,10) as $index) {
-            DB::table('product_category')->insert([
-                'name' => $faker->name,
+            DB::table('producers')->insert([
+                'name' => $faker->company,
             ]);
         }
     }

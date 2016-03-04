@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
+use App\ProductCategory;
 
 class ProductSubCategorySeeder extends Seeder
 {
@@ -11,9 +13,13 @@ class ProductSubCategorySeeder extends Seeder
      */
     public function run()
     {
-        DB::table('product_sub_category')->insert([
-            'name' => str_random(10),
-            'category_id' => 1,
-        ]);
+        $faker = Faker::create();
+        $categories = ProductCategory::all()->lists('id');
+        foreach (range(1,10) as $index) {
+            DB::table('product_sub_category')->insert([
+                'name' => $faker->name,
+                'category_id' => App\ProductCategory::all()->random()->id,
+            ]);
+        }
     }
 }
