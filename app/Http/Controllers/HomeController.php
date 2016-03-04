@@ -7,6 +7,7 @@ use App\PhotoAlbum;
 use DB;
 use App\ProductCategory;
 use App\ProductSubCategory;
+use App\Product;
 
 class HomeController extends Controller {
 
@@ -28,6 +29,8 @@ class HomeController extends Controller {
                 ))->limit(8)->get();
         $product_cate = ProductCategory::all()->toArray();
         $product_sub_cate = ProductSubCategory::all()->toArray();
+        $products = Product::all();
+        //get data for left menu
         $productAndSubProduct = array();
         foreach ($product_cate as $key => $cate) {
             $productAndSubProduct[$key]['cate']= $cate;
@@ -37,6 +40,8 @@ class HomeController extends Controller {
                 }
             }
         }
+        //get data product and category for home page
+        dd(ProductCategory::find(1)->subcategory);
         
         return view('pages.home', compact('articles', 'photoAlbums','product_cate','productAndSubProduct'));
     }

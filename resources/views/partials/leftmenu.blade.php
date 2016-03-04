@@ -2,10 +2,8 @@
     <div class="left-sidebar">
         <div class="panel-group category-products" id="accordian"><!--category-productsr-->
             <h2>Danh Mục sản phẩm</h2>
-            <?php
-            if (!empty($productAndSubProduct)) {
-                foreach ($productAndSubProduct as $productcate) {
-                    ?>
+            @if(isset($productAndSubProduct))
+                @forelse ($productAndSubProduct as $productcate)
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -17,124 +15,19 @@
                         <div>
                             <div class="panel-body">
                                 <ul>
-                                <?php
-                                if (count($productcate['cate']['subcate']) > 0) {
-                                    foreach ($productcate['cate']['subcate'] as $subcate) {
-                                        ?>
+                                    @if(isset($productcate['cate']['subcate']))
+                                        @forelse($productcate['cate']['subcate'] as $subcate)
                                             <li><a href="#"><?php echo $subcate['name']; ?> </a></li>
-                                    <?php }
-                                        }
-                                    ?>
+                                        @empty
+                                        @endforelse
+                                    @endif
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <?php
-                            }
-                        }
-                    ?>
-            <!--            <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">			
-                                        Thiết bị nhà bếp
-                                    </a>
-                                </h4>
-                            </div>
-                            <div>
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><a href="#">Máy hút mùi cổ điển</a></li>
-                                        <li><a href="#">Máy hút mùi kính</a></li>
-                                        <li><a href="#">Bếp gà, bếp từ</a></li>
-                                        <li><a href="#">Chậu rửa, vòi rửa</a></li>
-                                        <li><a href="#">Kính ốp bếp</a></li>
-                                        <li><a href="#">Phụ kiện tử bếp</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-            
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                                        Thương hiệu thiết bị bếp
-                                    </a>
-                                </h4>
-                            </div>
-                            <div>
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><a href="#">Bếp lorca</a></li>
-                                        <li><a href="#">Under Armour </a></li>
-                                        <li><a href="#">Adidas </a></li>
-                                        <li><a href="#">Puma</a></li>
-                                        <li><a href="#">ASICS </a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-            
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                                        Nội thất phòng khách
-                                    </a>
-                                </h4>
-                            </div>
-            
-                        </div>
-                        <div class="panel panel-default">
-            
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                                        Bàn ghế ăn
-                                    </a>
-                                </h4>
-                            </div>
-                            <div>
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><a href="#">Bàn ghế sồi ngà</a></li>
-                                        <li><a href="#">Bàn ghế xoan đào</a></li>
-            
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-            
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                                        Nội thất phòng ngủ
-                                    </a>
-                                </h4>
-                            </div>
-                            <div>
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><a href="#">Giường ngủ</a></li>
-                                        <li><a href="#">Kệ tivi</a></li>
-                                        <li><a href="#">Tủ áo</a></li>
-            
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-            
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                                        Quầy bar - nhà hàng
-                                    </a>
-                                </h4>
-                            </div>								
-                        </div>-->
+                @empty
+                @endforelse
+            @endif
         </div><!--/category-products-->
 
         <div class="brands_products support-online"><!--brands_products-->							
@@ -165,7 +58,6 @@
         </div><!--/brands_products-->
 
         <div class="price-range"><!--price-range-->
-
             <div class="">
                 <h2>Tin tức nổi bật</h2>
                 <div id="mycarouselPartner">
@@ -174,22 +66,6 @@
                             <div class="item ">
                                 <a class="JsImageFrame" href="#" title="Dự án có "><img class="img-responsive" style=""src="http://media.tinmoi.vn/2012/02/23/3_15_1329973634_84_1329959535-can-ho-sieu-sang2.jpg"></a>
                                 <h3><a class="title" href="#" title="Dự án có căn hộ giá 100 triệu đồng/m2">Dự án có căn hộ giá 100 triệu đồng/m2</a></h3>
-
-                            </div>
-
-                        </li>
-                        <li>
-                            <div class="item ">
-                                <a class="JsImageFrame" href="#" title="Dự án có "><img class="img-responsive" style=""src="http://media.tinmoi.vn/2012/02/23/3_15_1329973634_84_1329959535-can-ho-sieu-sang2.jpg"></a>
-                                <h3><a class="title" href="#" title="Dự án có căn hộ giá 100 triệu đồng/m2">Dự án có căn hộ giá 100 triệu đồng/m2</a></h3>
-
-                            </div>
-
-                        </li>
-                        <li>
-                            <div class="item ">
-                                <a class="JsImageFrame" href="#" title="Dự án có "><img class="img-responsive" style=""src="http://media.tinmoi.vn/2012/02/23/3_15_1329973634_84_1329959535-can-ho-sieu-sang2.jpg"></a>
-                                <h3><a class="title" href="#" title="Dự án có căn hộ giá 100 triệu đồng/m2">Dự án có căn hộ giá 100 triệu đồng/m2</a></h3>
                             </div>
                         </li>
                         <li>
@@ -202,7 +78,6 @@
                             <div class="item ">
                                 <a class="JsImageFrame" href="#" title="Dự án có "><img class="img-responsive" style=""src="http://media.tinmoi.vn/2012/02/23/3_15_1329973634_84_1329959535-can-ho-sieu-sang2.jpg"></a>
                                 <h3><a class="title" href="#" title="Dự án có căn hộ giá 100 triệu đồng/m2">Dự án có căn hộ giá 100 triệu đồng/m2</a></h3>
-
                             </div>
                         </li>
                         <li>
