@@ -47,14 +47,14 @@
     @if($pro_home)
         @foreach($pro_home as $pro)
             <div class="features_items"><!--features_items-->
-                <h2 class="title text-center">$pro['name']</h2>
+                <h2 class="title text-center">{{$pro['name']}}</h2>
                 @if($pro['product'])
                     @foreach($pro['product'] as $product)
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="images/home/product2.jpg" alt="" />
+                                        <img src="{{$product->picture}}" alt="" />
                                         <h3>{{$product->name}}</h3>
                                         <p>Mã sp :{{$product->unique_code}}</p>
                                         <p>Liên hệ</p>
@@ -74,12 +74,6 @@
         @endforeach
     @endif
 
-    
-    
-    
-    
-    
-    
     <!--recommentded-->
     <div class="recommended_items"><!--recommended_items-->
         <h2 class="title text-center">recommended items</h2>
