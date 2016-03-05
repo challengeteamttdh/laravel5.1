@@ -44,10 +44,6 @@ class HomeController extends Controller {
         
         $homeProductCate = ProductCategory::take($limit)->get();
         //get data product and category for home page
-//        $product_home = 
-//            DB::table('product_sub_category')->where('product_sub_category.category_id','17')
-//            ->join('products', 'products.sub_category_id', '=', 'product_sub_category.id');
-//        dd($product_home->get());
         
         $pro_home = array();
         foreach($homeProductCate as $key=> $productcate){
@@ -60,6 +56,9 @@ class HomeController extends Controller {
         
         
         return view('pages.home', compact('articles', 'photoAlbums','product_cate','productAndSubProduct','pro_home'));
+    }
+    public function productdetail($param=null) {
+        return view('product.detail', compact('param'));
     }
 
 }
