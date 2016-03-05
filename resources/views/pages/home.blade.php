@@ -44,247 +44,43 @@
 @endsection
 @section('content')
 <div class="col-sm-9 col-md-9 col-xs-12 padding-right">
-    <div class="features_items"><!--features_items-->
-        <h2 class="title text-center">Tủ bếp</h2>
-        <div class="col-sm-4">
-            <div class="product-image-wrapper">
-                <div class="single-products">
-                    <div class="productinfo text-center">
-                        <img src="images/home/product2.jpg" alt="" />
-                        <h3>Tủ Bếp Laminate Nhà kiên Hà Đông</h3>
-                        <p>Mã sp :TBCN11</p>
-                        <p>Liên hệ</p>
-                    </div>
-                </div>
-                <div class="choose">
-                    <ul class="nav nav-pills nav-justified">
-                        <li><a href="#"><i class=""></i>Chi tiết</a></li>
-                        <li><a href="#"><i class=""></i>Mua hàng</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="product-image-wrapper">
-                <div class="single-products">
-                    <div class="productinfo text-center">
-                        <img src="images/home/product2.jpg" alt="" />
-                        <h3>Tủ Bếp Laminate Nhà kiên Hà Đông</h3>
-                        <p>Mã sp :TBCN11</p>
-                        <p>Liên hệ</p>
-                    </div>
-                </div>
-                <div class="choose">
-                    <ul class="nav nav-pills nav-justified">
-                        <li><a href="#"><i class=""></i>Chi tiết</a></li>
-                        <li><a href="#"><i class=""></i>Mua hàng</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="product-image-wrapper">
-                <div class="single-products">
-                    <div class="productinfo text-center">
-                        <img src="images/home/product2.jpg" alt="" />
-                        <h3>Tủ Bếp Laminate Nhà kiên Hà Đông</h3>
-                        <p>Mã sp :TBCN11</p>
-                        <p>Liên hệ</p>
-                    </div>
-                </div>
-                <div class="choose">
-                    <ul class="nav nav-pills nav-justified">
-                        <li><a href="#"><i class=""></i>Chi tiết</a></li>
-                        <li><a href="#"><i class=""></i>Mua hàng</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="product-image-wrapper">
-                <div class="single-products">
-                    <div class="productinfo text-center">
-                        <img src="images/home/product2.jpg" alt="" />
-                        <h3>Tủ Bếp Laminate Nhà kiên Hà Đông</h3>
-                        <p>Mã sp :TBCN11</p>
-                        <p>Liên hệ</p>
-                    </div>
-                </div>
-                <div class="choose">
-                    <ul class="nav nav-pills nav-justified">
-                        <li><a href="#"><i class=""></i>Chi tiết</a></li>
-                        <li><a href="#"><i class=""></i>Mua hàng</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="product-image-wrapper">
-                <div class="single-products">
-                    <div class="productinfo text-center">
-                        <img src="images/home/product2.jpg" alt="" />
-                        <h3>Tủ Bếp Laminate Nhà kiên Hà Đông</h3>
-                        <p>Mã sp :TBCN11</p>
-                        <p>Liên hệ</p>
-                    </div>
-                </div>
-                <div class="choose">
-                    <ul class="nav nav-pills nav-justified">
-                        <li><a href="#"><i class=""></i>Chi tiết</a></li>
-                        <li><a href="#"><i class=""></i>Mua hàng</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="product-image-wrapper">
-                <div class="single-products">
-                    <div class="productinfo text-center">
-                        <img src="images/home/product2.jpg" alt="" />
-                        <h3>Tủ Bếp Laminate Nhà kiên Hà Đông</h3>
-                        <p>Mã sp :TBCN11</p>
-                        <p>Liên hệ</p>
+    @if($pro_home)
+        @foreach($pro_home as $pro)
+            <div class="features_items"><!--features_items-->
+                <h2 class="title text-center">$pro['name']</h2>
+                @if($pro['product'])
+                    @foreach($pro['product'] as $product)
+                        <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src="images/home/product2.jpg" alt="" />
+                                        <h3>{{$product->name}}</h3>
+                                        <p>Mã sp :{{$product->unique_code}}</p>
+                                        <p>Liên hệ</p>
+                                    </div>
+                                </div>
+                                <div class="choose">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li><a href="#"><i class=""></i>Chi tiết</a></li>
+                                        <li><a href="#"><i class=""></i>Mua hàng</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
+            </div><!--features_items-->
+        @endforeach
+    @endif
 
-                    </div>
-
-                </div>
-                <div class="choose">
-                    <ul class="nav nav-pills nav-justified">
-                        <li><a href="#"><i class=""></i>Chi tiết</a></li>
-                        <li><a href="#"><i class=""></i>Mua hàng</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </div><!--features_items-->
-
-
-    <div class="features_items"><!--features_items-->
-        <h2 class="title text-center">Thiết Bị tủ bếp</h2>
-        <div class="col-sm-4">
-            <div class="product-image-wrapper">
-                <div class="single-products">
-                    <div class="productinfo text-center">
-                        <img src="images/home/product2.jpg" alt="" />
-                        <h3>Tủ Bếp Laminate Nhà kiên Hà Đông</h3>
-                        <p>Mã sp :TBCN11</p>
-                        <p>Liên hệ</p>
-
-                    </div>
-
-                </div>
-                <div class="choose">
-                    <ul class="nav nav-pills nav-justified">
-                        <li><a href="#"><i class=""></i>Chi tiết</a></li>
-                        <li><a href="#"><i class=""></i>Mua hàng</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="product-image-wrapper">
-                <div class="single-products">
-                    <div class="productinfo text-center">
-                        <img src="images/home/product2.jpg" alt="" />
-                        <h3>Tủ Bếp Laminate Nhà kiên Hà Đông</h3>
-                        <p>Mã sp :TBCN11</p>
-                        <p>Liên hệ</p>
-
-                    </div>
-
-                </div>
-                <div class="choose">
-                    <ul class="nav nav-pills nav-justified">
-                        <li><a href="#"><i class=""></i>Chi tiết</a></li>
-                        <li><a href="#"><i class=""></i>Mua hàng</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="product-image-wrapper">
-                <div class="single-products">
-                    <div class="productinfo text-center">
-                        <img src="images/home/product2.jpg" alt="" />
-                        <h3>Tủ Bếp Laminate Nhà kiên Hà Đông</h3>
-                        <p>Mã sp :TBCN11</p>
-                        <p>Liên hệ</p>
-
-                    </div>
-
-                </div>
-                <div class="choose">
-                    <ul class="nav nav-pills nav-justified">
-                        <li><a href="#"><i class=""></i>Chi tiết</a></li>
-                        <li><a href="#"><i class=""></i>Mua hàng</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="product-image-wrapper">
-                <div class="single-products">
-                    <div class="productinfo text-center">
-                        <img src="images/home/product2.jpg" alt="" />
-                        <h3>Tủ Bếp Laminate Nhà kiên Hà Đông</h3>
-                        <p>Mã sp :TBCN11</p>
-                        <p>Liên hệ</p>
-
-                    </div>
-
-                </div>
-                <div class="choose">
-                    <ul class="nav nav-pills nav-justified">
-                        <li><a href="#"><i class=""></i>Chi tiết</a></li>
-                        <li><a href="#"><i class=""></i>Mua hàng</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="product-image-wrapper">
-                <div class="single-products">
-                    <div class="productinfo text-center">
-                        <img src="images/home/product2.jpg" alt="" />
-                        <h3>Tủ Bếp Laminate Nhà kiên Hà Đông</h3>
-                        <p>Mã sp :TBCN11</p>
-                        <p>Liên hệ</p>
-
-                    </div>
-
-                </div>
-                <div class="choose">
-                    <ul class="nav nav-pills nav-justified">
-                        <li><a href="#"><i class=""></i>Chi tiết</a></li>
-                        <li><a href="#"><i class=""></i>Mua hàng</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="product-image-wrapper">
-                <div class="single-products">
-                    <div class="productinfo text-center">
-                        <img src="images/home/product2.jpg" alt="" />
-                        <h3>Tủ Bếp Laminate Nhà kiên Hà Đông</h3>
-                        <p>Mã sp :TBCN11</p>
-                        <p>Liên hệ</p>
-
-                    </div>
-
-                </div>
-                <div class="choose">
-                    <ul class="nav nav-pills nav-justified">
-                        <li><a href="#"><i class=""></i>Chi tiết</a></li>
-                        <li><a href="#"><i class=""></i>Mua hàng</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
+    
+    
+    
+    
+    
+    
+    <!--recommentded-->
     <div class="recommended_items"><!--recommended_items-->
         <h2 class="title text-center">recommended items</h2>
 

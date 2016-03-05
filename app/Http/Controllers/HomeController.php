@@ -18,7 +18,7 @@ class HomeController extends Controller {
      */
     public function index() {
         $articles = Article::with('author')->orderBy('position', 'DESC')->orderBy('created_at', 'DESC')->limit(4)->get();
-
+        $limit = 4;
         $photoAlbums = PhotoAlbum::select(array(
                     'photo_albums.id',
                     'photo_albums.name',
@@ -40,13 +40,26 @@ class HomeController extends Controller {
                 }
             }
         }
+        
+        
+        $homeProductCate = ProductCategory::take($limit)->get();
         //get data product and category for home page
-//        dd(ProductCategory::all());
-        foreach (ProductCategory::all() as $value) {
-            var_dump($value->subcategory);
+//        $product_home = 
+//            DB::table('product_sub_category')->where('product_sub_category.category_id','17')
+//            ->join('products', 'products.sub_category_id', '=', 'product_sub_category.id');
+//        dd($product_home->get());
+        
+        $pro_home = array();
+        foreach($homeProductCate as $key=> $productcate){
+            $pro_home[$key]['name'] = $productcate->name;
+            $pro_home[$key]['product'] =  
+                    DB::table('product_sub_category')->where('product_sub_category.category_id',$productcate->id)
+                    ->join('products', 'products.sub_category_id', '=', 'product_sub_category.id')->get();
         }
-        die;
-        return view('pages.home', compact('articles', 'photoAlbums','product_cate','productAndSubProduct'));
+//        dd($pro_home);
+        
+        
+        return view('pages.home', compact('articles', 'photoAlbums','product_cate','productAndSubProduct','pro_home'));
     }
 
 }
