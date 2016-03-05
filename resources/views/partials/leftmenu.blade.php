@@ -7,7 +7,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                <!--data-toggle="collapse"-->
+                                <a  data-parent="#accordian" href="{{URL::to('/')}}/product-category-{{$productcate['cate']['id']}}">
                                     <?php echo $productcate['cate']['name']; ?>
                                 </a>
                             </h4>
@@ -17,7 +18,7 @@
                                 <ul>
                                     @if(isset($productcate['cate']['subcate']))
                                         @forelse($productcate['cate']['subcate'] as $subcate)
-                                            <li><a href="#"><?php echo $subcate['name']; ?> </a></li>
+                                            <li><a href="{{URL::to('/')}}/product-sub-category-{{$subcate['id']}}"><?php echo $subcate['name']; ?> </a></li>
                                         @empty
                                         @endforelse
                                     @endif
