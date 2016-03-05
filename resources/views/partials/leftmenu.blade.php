@@ -58,39 +58,6 @@
             </div>
         </div><!--/brands_products-->
 
-        <div class="price-range"><!--price-range-->
-            <div class="">
-                <h2>Tin tức nổi bật</h2>
-                <div id="mycarouselPartner">
-                    <ul>
-                        <li>
-                            <div class="item ">
-                                <a class="JsImageFrame" href="#" title="Dự án có "><img class="img-responsive" style=""src="http://media.tinmoi.vn/2012/02/23/3_15_1329973634_84_1329959535-can-ho-sieu-sang2.jpg"></a>
-                                <h3><a class="title" href="#" title="Dự án có căn hộ giá 100 triệu đồng/m2">Dự án có căn hộ giá 100 triệu đồng/m2</a></h3>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item ">
-                                <a class="JsImageFrame" href="#" title="Dự án có "><img class="img-responsive" style=""src="http://media.tinmoi.vn/2012/02/23/3_15_1329973634_84_1329959535-can-ho-sieu-sang2.jpg"></a>
-                                <h3><a class="title" href="#" title="Dự án có căn hộ giá 100 triệu đồng/m2">Dự án có căn hộ giá 100 triệu đồng/m2</a></h3>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item ">
-                                <a class="JsImageFrame" href="#" title="Dự án có "><img class="img-responsive" style=""src="http://media.tinmoi.vn/2012/02/23/3_15_1329973634_84_1329959535-can-ho-sieu-sang2.jpg"></a>
-                                <h3><a class="title" href="#" title="Dự án có căn hộ giá 100 triệu đồng/m2">Dự án có căn hộ giá 100 triệu đồng/m2</a></h3>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item ">
-                                <a class="JsImageFrame" href="#" title="Dự án có "><img class="img-responsive" style=""src="http://media.tinmoi.vn/2012/02/23/3_15_1329973634_84_1329959535-can-ho-sieu-sang2.jpg"></a>
-                                <h3><a class="title" href="#" title="Dự án có căn hộ giá 100 triệu đồng/m2">Dự án có căn hộ giá 100 triệu đồng/m2</a></h3>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div><!--/price-range-->
         <div class="" id ="CommonStatistic">
             <div class="truycap">
                 <div class="h20"><!----></div>
