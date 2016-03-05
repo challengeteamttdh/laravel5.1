@@ -46,7 +46,7 @@ class HomeController extends Controller {
         //get data product and category for home page
 
 
-        
+
         $pro_home = array();
         foreach($homeProductCate as $key=> $productcate){
             $pro_home[$key]['name'] = $productcate->name;
@@ -58,6 +58,9 @@ class HomeController extends Controller {
         
         
         return view('pages.home', compact('articles', 'photoAlbums','product_cate','productAndSubProduct','pro_home'));
+    }
+    public function productdetail($param=null) {
+        return view('product.detail', compact('param'));
     }
 
 }
