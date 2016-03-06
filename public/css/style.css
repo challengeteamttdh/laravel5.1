@@ -12,70 +12,69 @@ and open the template in the editor.
 body {
     margin: 0;
     padding: 0;
-   /* background: url("../images/home/BodyBg.png") repeat;*/
+    /* background: url("../images/home/BodyBg.png") repeat;*/
     font: normal 12px Arial;
 }
 
 /*
-	CSS content
+        CSS content
 */
-	
-	/*
-		form search 
-	*/
+
+/*
+        form search 
+*/
 .form-search {
-	display: inline-block;
+    display: inline-block;
 }
 .search-cat,.btn-search,.search-produce{
-	float: left;
+    float: left;
 }
 
 
 /* Css left slider*/
 
-	/* Hỗ trợ trức tuyến*/
+/* Hỗ trợ trức tuyến*/
 .support{
-	background: url("../images/home/support.png") no-repeat left top;
-	padding-left: 58px;
-	height: 61px;
-
+    background: url("../images/support.png") no-repeat left top;
+    padding-left: 58px;
+    height: 61px;
 }
 
 
 #mycarouselPartner ul li.item{
-	display: inline-block;
+    display: inline-block;
 }
 #mycarouselPartner ul li .JsImageFrame{
-	display: block;
-	float: left;
-	width: 88px;
-	height: 60px;
-	margin-right: 11px;
+    display: block;
+    float: left;
+    width: 88px;
+    height: 60px;
+    margin-right: 11px;
 }
 #mycarouselPartner ul li div h3{
-	font-size: 12px;
-	float: left;
-	color: #393939;
+    font-size: 12px;
+    float: left;
+    color: #393939;
 }
 #mycarouselPartner ul li div h3 a{
-	color: #393939;
+    color: #393939;
 }
 .menu-bar{
 
 }
 #CommonStatistic{
-	background: url("../images/home/StatBg.png") no-repeat;
-	width: 220px;
-	height: 92px;
-	margin-bottom: 6px;
-	 	
+    background: url("../images/StatBg.png") no-repeat;
+    width: 220px;
+    height: 92px;
+    margin-bottom: 6px;
+
 }
 #CommonStatistic .truycap{
-	padding: 0 18px 0 55px;
-	color: #fff;
+    padding: 0 18px 0 55px;
+    color: #fff;
 }
 .h20{
-	height: 20px;
+    height: 20px;
 }
 #CommonStatistic .label {
     width: 80px;
@@ -93,4 +92,38 @@ body {
 #CommonStatistic .label {
     width: 80px;
     float: left;
+}
+
+/* Product detail*/
+.SplitPages{
+    text-align: center;
+}
+.SplitPages .first {
+    background: url(../images/icon/first.png) no-repeat center;
+}
+.SplitPages .last {
+    background: url(../images/icon/last.png) no-repeat center;
+}
+.SplitPages a {
+    display: inline-block;
+    width: 25px;
+    height: 20px;
+    font: normal 11px Tahoma;
+    color: #4a4a4a;
+    line-height: 20px;
+    text-align: center;
+    margin: 0 2px;
+}
+.SplitPages .current {
+    width: 23px;
+    height: 18px;
+    border: solid 1px #eaeaea;
+    line-height: 18px;
+    font-weight: bold;
+}
+.SplitPages .other {
+    width: 23px;
+    height: 18px;
+    border: solid 1px #eaeaea;
+    line-height: 18px;
 }

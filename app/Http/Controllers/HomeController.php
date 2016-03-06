@@ -103,5 +103,12 @@ class HomeController extends Controller {
         
         return view('product.search');
     }
+    public function product($productid){
+        if(!empty($productid)){
+            $product = Product::find($productid);
+        }
+        
+        return view('product.detail', ['product'=>$product,'productAndSubProduct'=> $this->getcategory()]);
+    }
 
 }
