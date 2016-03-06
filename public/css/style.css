@@ -94,3 +94,37 @@ body {
     width: 80px;
     float: left;
 }
+
+/* Product detail*/
+.SplitPages{
+	text-align: center;
+}
+.SplitPages .first {
+	background: url(../images/icon/first.png) no-repeat center;
+}
+.SplitPages .last {
+	background: url(../images/icon/last.png) no-repeat center;
+}
+.SplitPages a {
+	display: inline-block;
+	width: 25px;
+	height: 20px;
+	font: normal 11px Tahoma;
+	color: #4a4a4a;
+	line-height: 20px;
+	text-align: center;
+	margin: 0 2px;
+}
+.SplitPages .current {
+	width: 23px;
+	height: 18px;
+	border: solid 1px #eaeaea;
+	line-height: 18px;
+	font-weight: bold;
+}
+.SplitPages .other {
+	width: 23px;
+	height: 18px;
+	border: solid 1px #eaeaea;
+	line-height: 18px;
+}
