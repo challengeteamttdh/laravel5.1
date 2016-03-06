@@ -2,8 +2,8 @@
 @section('content')
 <div class="col-sm-9 col-md-9 col-xs-12 padding-right">
     <div class="features_items"><!--features_items-->
-        <h2 class="title text-center">Kết quả tìm kiếm với từ khóa 
-            @if(!empty($params)) {{$params}} @endif
+        <h2 class="title text-center">Kết quả tìm kiếm với từ khóa: 
+            <b>@if(!empty($params)) {{$params}} @endif</b>
         </h2>
     </div><!--features_items-->
     @if(isset($search_result))
