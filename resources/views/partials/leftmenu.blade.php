@@ -3,35 +3,59 @@
         <div class="panel-group category-products" id="accordian"><!--category-productsr-->
             <h2>Danh Mục sản phẩm</h2>
             @if(isset($productAndSubProduct))
-                @forelse ($productAndSubProduct as $productcate)
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <!--data-toggle="collapse"-->
-                                <!--<a  data-parent="#accordian" href="{{URL::to('/')}}/product-category-{{$productcate['cate']['id']}}">-->
-                                <a data-toggle="collapse" data-parent="#accordian" href="#cate_<?php echo $productcate['cate']['id']; ?>">
-                                    <span class="badge pull-left"><i class="fa fa-plus"></i></span>
-                                    <?php echo $productcate['cate']['name']; ?>
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="cate_<?php echo $productcate['cate']['id']; ?>" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <ul>
-                                    @if(isset($productcate['cate']['subcate']))
-                                        @forelse($productcate['cate']['subcate'] as $subcate)
-                                            <li><a href="{{URL::to('/')}}/product-sub-category-{{$subcate['id']}}"><?php echo $subcate['name']; ?> </a></li>
-                                        @empty
-                                        @endforelse
-                                    @endif
-                                </ul>
-                            </div>
-                        </div>
+            @forelse ($productAndSubProduct as $productcate)
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <!--data-toggle="collapse"-->
+                        <!--<a  data-parent="#accordian" href="{{URL::to('/')}}/product-category-{{$productcate['cate']['id']}}">-->
+                        <a data-toggle="collapse" data-parent="#accordian" href="#cate_<?php echo $productcate['cate']['id']; ?>">
+                            <span class="badge pull-left"><i class="fa fa-plus"></i></span>
+                            <?php echo $productcate['cate']['name']; ?>
+                        </a>
+                    </h4>
+                </div>
+                <div id="cate_<?php echo $productcate['cate']['id']; ?>" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul>
+                            @if(isset($productcate['cate']['subcate']))
+                            @forelse($productcate['cate']['subcate'] as $subcate)
+                            <li><a href="{{URL::to('/')}}/product-sub-category-{{$subcate['id']}}"><?php echo $subcate['name']; ?> </a></li>
+                            @empty
+                            @endforelse
+                            @endif
+                        </ul>
                     </div>
-                @empty
-                @endforelse
+                </div>
+            </div>
+            @empty
+            @endforelse
             @endif
         </div><!--/category-products-->
+        <div id='cssmenu'>
+            <ul>
+                <li><a href='#'><span>Home</span></a></li>
+                <li class='active has-sub'><a href='#'><span>Products</span></a>
+                    <ul>
+                        <li class='has-sub'><a href='#'><span>Product 1</span></a>
+                            <ul>
+                                <li><a href='#'><span>Sub Product</span></a></li>
+                                <li class='last'><a href='#'><span>Sub Product</span></a></li>
+                            </ul>
+                        </li>
+                        <li class='has-sub'><a href='#'><span>Product 2</span></a>
+                            <ul>
+                                <li><a href='#'><span>Sub Product</span></a></li>
+                                <li class='last'><a href='#'><span>Sub Product</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href='#'><span>About</span></a></li>
+                <li class='last'><a href='#'><span>Contact</span></a></li>
+            </ul>
+        </div>
+
 
         <div class="brands_products support-online"><!--brands_products-->							
             <div class="brands-name">
@@ -67,7 +91,7 @@
                 <div class="value">2</div>
                 <div class="cb h25"><!----></div>
                 <div class="label">Tổng truy cập:</div>
-                <div class="value">636670</div>
+                <div class="value">10</div>
                 <div class="cb h0"><!----></div>
             </div>
         </div>
