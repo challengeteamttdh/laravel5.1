@@ -43,7 +43,6 @@
                             <li><a href="#">Company Information</a></li>
                             <li><a href="#">Careers</a></li>
                             <li><a href="#">Store Location</a></li>
-                            <li><a href="#">Affillate Program</a></li>
                             <li><a href="#">Copyright</a></li>
                         </ul>
                     </div>
