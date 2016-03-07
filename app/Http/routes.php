@@ -62,6 +62,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     # Product
     Route::any('product/create', 'Admin\ProductController@create');
+    Route::any('product/showathome/{id}', 'Admin\ProductController@showAtHomepage');
     Route::any('product/edit/{id}', 'Admin\ProductController@edit');
     Route::any('product/delete/{id}', 'Admin\ProductController@delete');
     Route::any('product', 'Admin\ProductController@index');

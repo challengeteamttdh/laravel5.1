@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->foreign('user_id_edited')->references('id')->on('users')->onDelete('set null');
             $table->integer('sub_category_id')->unsigned();
             $table->foreign('sub_category_id')->references('id')->on('product_sub_category');
+            $table->enum('showathome', ['0', '1'])->nullable()->default('0')->comment = "'0'->notshow at home,'1'->show";
             $table->unsignedInteger('color_id')->nullable();
             $table->foreign('color_id')->references('id')->on('colors')->onDelete('set null');
             $table->unsignedInteger('material_id')->nullable();

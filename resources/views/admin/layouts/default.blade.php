@@ -14,8 +14,20 @@
         <meta name="description"
               content="Lorem ipsum dolor sit amet, nihil fabulas et sea, nam posse menandri scripserit no, mei."/>
     @show
+    
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <script src="{{ asset('js/admin.js') }}"></script>
+    <script type="text/javascript">
+        function changeType(id){
+            console.log($('.show-at-home').val());
+            $.ajax({
+                url: "{!! URL::to('/') !!}/admin/product/showathome/"+ id,
+                beforeSend: function( xhr ) {
+                  xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+                }
+            });
+        }
+    </script>
     @yield('styles')
 </head>
 <body>
