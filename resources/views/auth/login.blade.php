@@ -5,13 +5,8 @@
 
 {{-- Content --}}
 @section('content')
-    <div class="row">
-        <div class="page-header">
-            <h2>{!! trans('site/user.login_to_account') !!}</h2>
-        </div>
-    </div>
-
-    <div class="container-fluid">
+    <div class="col-md-9 col-xs-12 col-sm-9">
+        <h2>{!! trans('site/user.login_to_account') !!}</h2>
         <div class="row">
             {!! Form::open(array('url' => URL::to('auth/login'), 'method' => 'post', 'files'=> true)) !!}
             <div class="form-group  {{ $errors->has('email') ? 'has-error' : '' }}">

@@ -7,17 +7,20 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                <!--data-toggle="collapse"-->
+                                <!--<a  data-parent="#accordian" href="{{URL::to('/')}}/product-category-{{$productcate['cate']['id']}}">-->
+                                <a data-toggle="collapse" data-parent="#accordian" href="#cate_<?php echo $productcate['cate']['id']; ?>">
+                                    <span class="badge pull-left"><i class="fa fa-plus"></i></span>
                                     <?php echo $productcate['cate']['name']; ?>
                                 </a>
                             </h4>
                         </div>
-                        <div>
+                        <div id="cate_<?php echo $productcate['cate']['id']; ?>" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <ul>
                                     @if(isset($productcate['cate']['subcate']))
                                         @forelse($productcate['cate']['subcate'] as $subcate)
-                                            <li><a href="#"><?php echo $subcate['name']; ?> </a></li>
+                                            <li><a href="{{URL::to('/')}}/product-sub-category-{{$subcate['id']}}"><?php echo $subcate['name']; ?> </a></li>
                                         @empty
                                         @endforelse
                                     @endif
@@ -29,8 +32,32 @@
                 @endforelse
             @endif
         </div><!--/category-products-->
+        <div id='cssmenu'>
+            <ul>
+                <li><a href='#'><span>Home</span></a></li>
+                <li class='active has-sub'><a href='#'><span>Products</span></a>
+                    <ul>
+                        <li class='has-sub'><a href='#'><span>Product 1</span></a>
+                            <ul>
+                                <li><a href='#'><span>Sub Product</span></a></li>
+                                <li class='last'><a href='#'><span>Sub Product</span></a></li>
+                            </ul>
+                        </li>
+                        <li class='has-sub'><a href='#'><span>Product 2</span></a>
+                            <ul>
+                                <li><a href='#'><span>Sub Product</span></a></li>
+                                <li class='last'><a href='#'><span>Sub Product</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href='#'><span>About</span></a></li>
+                <li class='last'><a href='#'><span>Contact</span></a></li>
+            </ul>
+        </div>
 
-        <div class="brands_products support-online"><!--brands_products-->							
+
+        <div class="brands_products support-online"><!--brands_products-->
             <div class="brands-name">
                 <h2>Hỗ trợ trực tuyến</h2>
                 <div class="h11"><!----></div>
@@ -57,39 +84,6 @@
             </div>
         </div><!--/brands_products-->
 
-        <div class="price-range"><!--price-range-->
-            <div class="">
-                <h2>Tin tức nổi bật</h2>
-                <div id="mycarouselPartner">
-                    <ul>
-                        <li>
-                            <div class="item ">
-                                <a class="JsImageFrame" href="#" title="Dự án có "><img class="img-responsive" style=""src="http://media.tinmoi.vn/2012/02/23/3_15_1329973634_84_1329959535-can-ho-sieu-sang2.jpg"></a>
-                                <h3><a class="title" href="#" title="Dự án có căn hộ giá 100 triệu đồng/m2">Dự án có căn hộ giá 100 triệu đồng/m2</a></h3>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item ">
-                                <a class="JsImageFrame" href="#" title="Dự án có "><img class="img-responsive" style=""src="http://media.tinmoi.vn/2012/02/23/3_15_1329973634_84_1329959535-can-ho-sieu-sang2.jpg"></a>
-                                <h3><a class="title" href="#" title="Dự án có căn hộ giá 100 triệu đồng/m2">Dự án có căn hộ giá 100 triệu đồng/m2</a></h3>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item ">
-                                <a class="JsImageFrame" href="#" title="Dự án có "><img class="img-responsive" style=""src="http://media.tinmoi.vn/2012/02/23/3_15_1329973634_84_1329959535-can-ho-sieu-sang2.jpg"></a>
-                                <h3><a class="title" href="#" title="Dự án có căn hộ giá 100 triệu đồng/m2">Dự án có căn hộ giá 100 triệu đồng/m2</a></h3>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item ">
-                                <a class="JsImageFrame" href="#" title="Dự án có "><img class="img-responsive" style=""src="http://media.tinmoi.vn/2012/02/23/3_15_1329973634_84_1329959535-can-ho-sieu-sang2.jpg"></a>
-                                <h3><a class="title" href="#" title="Dự án có căn hộ giá 100 triệu đồng/m2">Dự án có căn hộ giá 100 triệu đồng/m2</a></h3>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div><!--/price-range-->
         <div class="" id ="CommonStatistic">
             <div class="truycap">
                 <div class="h20"><!----></div>
@@ -97,7 +91,7 @@
                 <div class="value">2</div>
                 <div class="cb h25"><!----></div>
                 <div class="label">Tổng truy cập:</div>
-                <div class="value">636670</div>
+                <div class="value">10</div>
                 <div class="cb h0"><!----></div>
             </div>
         </div>
