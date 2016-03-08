@@ -48,7 +48,6 @@
             </div>
             <a class="viewAll" href="#" title="{{$pro['name']}}">Xem tất cả »</a>
             <div class="cb h0"><!----></div>
-            
             <div class="container-productcate">
                 @if($pro['product'])
                 @foreach($pro['product'] as $product)
@@ -74,10 +73,9 @@
                         </div>
                     </div>
                     <div class="cb h0"><!----></div>
-                    
                 @endforeach
                 @endif
-                </div>
+            </div>
         </div>
     @endforeach
     @endif
