@@ -1,66 +1,15 @@
 <footer id="footer"><!--Footer-->
     <div class="footer-widget">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-2">
-                    <div class="single-widget">
-                        <h2>Dịch vụ</h2>
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">Liên hệ</a></li>
-                            <li><a href="#">Order Status</a></li>
-                            <li><a href="#">Change Location</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="single-widget">
-                        <h2>Quock Shop</h2>
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">T-Shirt</a></li>
-                            <li><a href="#">Mens</a></li>
-                            <li><a href="#">Womens</a></li>
-                            <li><a href="#">Gift Cards</a></li>
-                            <li><a href="#">Shoes</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="single-widget">
-                        <h2>Policies</h2>
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Privecy Policy</a></li>
-                            <li><a href="#">Refund Policy</a></li>
-                            <li><a href="#">Billing System</a></li>
-                            <li><a href="#">Ticket System</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="single-widget">
-                        <h2>About</h2>
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">Company Information</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Store Location</a></li>
-                            <li><a href="#">Affillate Program</a></li>
-                            <li><a href="#">Copyright</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3 col-sm-offset-1">
-                    <div class="single-widget">
-                        <h2>About </h2>
-                        <form action="#" class="searchform">
-                            <input type="text" placeholder="Địa chỉ email của bạn" />
-                            <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-                            <p>Nhận thông tin <br />từ chúng tôi...</p>
-                        </form>
-                    </div>
-                </div>
-
+            <div class="footer_ct">
+                <p><a href="http://noithatchangson.vn/"><span style="font-size:16px"><strong>Cơ Sở Sản Xuất và&nbsp;Tư
+                                Vấn Thiết Kế&nbsp;Nội Thất Chàng Sơn</strong></span></a></p>
+                <p><a href="http://noithatchangson.vn/">http://noithatchangson.vn</a></p>
+                <p>Địa chỉ xưởng&nbsp;: Số 9 KCN&nbsp;Chàng Sơn -&nbsp;Thạch Thất - Hà Nội - Việt Nam</p>
+                <p>VPĐD: P807 - CT1A - Tòa C14 Bộ Công An - Lê Văn Lương kéo dài - Nam Từ Liêm - Hà Nội</p>
+                <p>SĐT: 0972681291</p>
+                <p>Email: noithatchangson.vn@gmail.com</p>
+                <p>Bản quyền thuộc về Cơ Sở Sản Xuất Và&nbsp;Tư Vấn Thiết Kế Nội Thất Chàng Sơn</p>
             </div>
-        </div>
     </div>
 
     <div class="footer-bottom">

@@ -1,61 +1,31 @@
 <div class="col-md-3 col-xs-12 col-sm-3">
     <div class="left-sidebar">
-        <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-            <h2>Danh Mục sản phẩm</h2>
-            @if(isset($productAndSubProduct))
-                @forelse ($productAndSubProduct as $productcate)
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <!--data-toggle="collapse"-->
-                                <!--<a  data-parent="#accordian" href="{{URL::to('/')}}/product-category-{{$productcate['cate']['id']}}">-->
-                                <a data-toggle="collapse" data-parent="#accordian" href="#cate_<?php echo $productcate['cate']['id']; ?>">
-                                    <span class="badge pull-left"><i class="fa fa-plus"></i></span>
-                                    <?php echo $productcate['cate']['name']; ?>
+        <div class="panel-group category-products" id="SubProductLeftCategory"><!--category-productsr-->
+            <div class="TopBar"><h2>DANH MỤC SẢN PHẨM</h2></div>
+            <div id='cssmenu'>
+                <ul>
+                    @if(isset($productAndSubProduct))
+                        @forelse ($productAndSubProduct as $productcate)
+                            <li class="@if(isset($productcate['cate']['subcate'])) {{'active has-sub'}}  @endif">
+                                <a href="{{URL::to('/')}}/product-category-{{$productcate['cate']['id']}}">
+                                    <span><?php echo $productcate['cate']['name']; ?></span>
                                 </a>
-                            </h4>
-                        </div>
-                        <div id="cate_<?php echo $productcate['cate']['id']; ?>" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <ul>
-                                    @if(isset($productcate['cate']['subcate']))
-                                        @forelse($productcate['cate']['subcate'] as $subcate)
-                                            <li><a href="{{URL::to('/')}}/product-sub-category-{{$subcate['id']}}"><?php echo $subcate['name']; ?> </a></li>
-                                        @empty
-                                        @endforelse
-                                    @endif
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                @empty
-                @endforelse
-            @endif
+                                @if(isset($productcate['cate']['subcate']))
+                                    @forelse($productcate['cate']['subcate'] as $subcate)
+                                        <ul>
+                                            <li class=''><a href='{{URL::to('/')}}/product-sub-category-{{$subcate['id']}}'><span><?php echo $subcate['name']; ?> </span></a>
+                                            </li>
+                                        </ul>
+                                    @empty
+                                    @endforelse
+                                @endif
+                            </li>
+                        @empty
+                        @endforelse
+                    @endif
+                </ul>
+            </div>
         </div><!--/category-products-->
-        <div id='cssmenu'>
-            <ul>
-                <li><a href='#'><span>Home</span></a></li>
-                <li class='active has-sub'><a href='#'><span>Products</span></a>
-                    <ul>
-                        <li class='has-sub'><a href='#'><span>Product 1</span></a>
-                            <ul>
-                                <li><a href='#'><span>Sub Product</span></a></li>
-                                <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                            </ul>
-                        </li>
-                        <li class='has-sub'><a href='#'><span>Product 2</span></a>
-                            <ul>
-                                <li><a href='#'><span>Sub Product</span></a></li>
-                                <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href='#'><span>About</span></a></li>
-                <li class='last'><a href='#'><span>Contact</span></a></li>
-            </ul>
-        </div>
-
 
         <div class="brands_products support-online"><!--brands_products-->
             <div class="brands-name">
@@ -74,12 +44,6 @@
                     <div class="h6"><!----></div>
                     <span class="title">0979.689.829</span>
                     <div class="cb h15"><!----></div>
-                </div><div class="item">
-                    <div class="image"></div>
-                    <a class="title" href="">Hoàng Anh</a>
-                    <div class="h6"><!----></div>
-                    <span class="title">0983379283</span>
-                    <div class="cb h15"><!----></div>
                 </div>
             </div>
         </div><!--/brands_products-->
@@ -97,3 +61,26 @@
         </div>
     </div>
 </div>
+<!--<div id='cssmenu'>
+                    <ul>
+                        <li><a href='#'><span>Home</span></a></li>
+                        <li class='active has-sub'><a href='#'><span>Products</span></a>
+                            <ul>
+                                <li class='has-sub'><a href='#'><span>Product 1</span></a>
+                                    <ul>
+                                        <li><a href='#'><span>Sub Product</span></a></li>
+                                        <li class='last'><a href='#'><span>Sub Product</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class='has-sub'><a href='#'><span>Product 2</span></a>
+                                    <ul>
+                                        <li><a href='#'><span>Sub Product</span></a></li>
+                                        <li class='last'><a href='#'><span>Sub Product</span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href='#'><span>About</span></a></li>
+                        <li class='last'><a href='#'><span>Contact</span></a></li>
+                    </ul>
+                </div>-->
