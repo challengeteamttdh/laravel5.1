@@ -95,7 +95,7 @@ class ProductSubcategoryController extends AdminController
      */
     public function destroy(ProductSubCategory $productsubcategory)
     {
-        $productsubcategory->delete();
+        $productsubcategory->forceDelete();
     }
 
     /**

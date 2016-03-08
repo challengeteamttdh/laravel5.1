@@ -92,7 +92,7 @@ class ProducerController extends AdminController
      */
     public function destroy(Producer $producer)
     {
-        $producer->delete();
+        $producer->forceDelete();
     }
 
     /**

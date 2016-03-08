@@ -92,7 +92,7 @@ class MaterialController extends AdminController
      */
     public function destroy(Material $material)
     {
-        $material->delete();
+        $material->forceDelete();
     }
 
     /**
