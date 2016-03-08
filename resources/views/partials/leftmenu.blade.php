@@ -1,7 +1,7 @@
 <div class="col-md-3 col-xs-12 col-sm-3">
     <div class="left-sidebar">
         <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-            <h2>Danh Mục sản phẩm</h2>
+            <div class="category-panel">Danh Mục sản phẩm</div>
             <div id='cssmenu'>
                 <ul>
                     @if(isset($productAndSubProduct))
