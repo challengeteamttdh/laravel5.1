@@ -2561,3 +2561,9 @@ h2.title {
   padding-left: 15px;
   font-size: 14px;
 }
+
+#map {
+  width: 400px;
+  height: 200px;
+  margin-left: 75px;
+}
