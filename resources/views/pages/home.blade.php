@@ -73,17 +73,13 @@
                             <div class="cb h1"><!----></div>
                         </div>
                     </div>
-                    <div class="cb h0"><!----></div>
-                    
                 @endforeach
                 @endif
-                </div>
+                <div class="cb h0"><!----></div>
+            </div>
         </div>
     @endforeach
     @endif
-
-    
-
 </div>
 @endsection
 
