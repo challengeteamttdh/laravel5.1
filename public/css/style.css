@@ -304,3 +304,156 @@ body {
     border-top-right-radius: 3px;
     text-transform: capitalize;
 }
+
+//category home
+.SubProductHomePageGroup1 {
+    width: 730px;
+    margin-bottom: 32px;
+}
+
+.SubProductHomePageGroup1 .TopBar {
+    background: url("../images/MainBoxTopBarShadow.png") no-repeat right top;
+    height: 44px;
+    float: left;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 1;
+}
+.SubProductHomePageGroup1 .TopBarTitle {
+    background: url("../images/MainBoxTopBarBg.png") repeat-x bottom;
+    height: 44px;
+    float: left;
+}
+.SubProductHomePageGroup1 h2 {
+    font-size: 12px;
+    margin: 0;
+}
+.SubProductHomePageGroup1 .TopBar a {
+    display: block;
+    float: left;
+    font-weight: bold;
+    color: #5a1c00;
+    text-transform: uppercase;
+    height: 35px;
+    line-height: 35px;
+    margin-top: 9px;
+    padding-left: 19px;
+    padding-right: 22px;
+    border-left: solid 1px #d3d3d3;
+    border-right: solid 1px #d3d3d3;
+}
+.h0 {
+    height: 0;
+}
+.cb {
+    clear: both;
+}
+.SubProductHomePageGroup1 .container-productcate {
+    background: #fff;
+    border: solid 1px #d3d3d3;
+}
+.SubProductHomePageGroup1 .outerItem {
+    float: left;
+    padding-left: 13px;
+    padding-right: 6px;
+}
+.SubProductHomePageGroup1 .viewAll {
+    display: block;
+    float: right;
+    color: #333;
+    float: right;
+    margin-top: 16px;
+}
+.SubProductHomePageGroup1 .item {
+    width: 219px;
+    height: 258px;
+    border: solid 1px #ddd;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    background: #fff;
+}
+.SubProductHomePageGroup1 .itemContent {
+    padding: 7px 7px 0 8px;
+    height: 221px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+.SubProductHomePageGroup1 .detail:hover, .SubProductHomePageGroup1 .order:hover {
+    background: #e4c759;
+    color: #fff;
+}
+.SubProductHomePageGroup1 .JsImageFrame {
+    display: block;
+    width: 204px;
+    height: 140px;
+}
+.JsImageFrame {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.h9 {
+    height: 9px;
+}
+.SubProductHomePageGroup1 h3 {
+    font-size: 12px;
+    margin: 0;
+}
+.SubProductHomePageGroup1 .title {
+    font-weight: bold;
+    color: #5a1c00;
+}
+.h5 {
+    height: 5px;
+}
+.h1 {
+    height: 1px;
+}
+
+.cb {
+    clear: both;
+}
+.SubProductHomePageGroup1 .code {
+    font-weight: bold;
+    color: #646464;
+}
+.SubProductHomePageGroup1 .price1 {
+    font-weight: bold;
+    color: #908f8f;
+    text-decoration: line-through;
+    margin-right: 5px;
+}
+.SubProductHomePageGroup1 .price2 {
+    font-weight: bold;
+    color: #f00;
+}
+.SubProductHomePageGroup1 .detail {
+    background: #f0f0f0;
+    display: block;
+    float: left;
+    width: 106px;
+    height: 29px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    line-height: 29px;
+    border-right: solid 1px #dbdbdb;
+}
+.SubProductHomePageGroup1 .order {
+    background: #f0f0f0;
+    display: block;
+    float: right;
+    width: 111px;
+    height: 29px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    line-height: 29px;
+    border-left: solid 1px #fff;
+}
+.SubProductHomePageGroup1 .outerItem {
+        float: left;
+    padding-left: 8px;
+    padding-right: 7px;
+}
+/*---*/
