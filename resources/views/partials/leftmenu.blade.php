@@ -5,29 +5,29 @@
             <div id='cssmenu'>
                 <ul>
                     @if(isset($productAndSubProduct))
-                    @forelse ($productAndSubProduct as $productcate)
-                    <li class="@if(isset($productcate['cate']['subcate'])) {{'active has-sub'}}  @endif">
-                        <a href="{{URL::to('/')}}/product-category-{{$productcate['cate']['id']}}">
-                            <span><?php echo $productcate['cate']['name']; ?></span>
-                        </a>
-                        @if(isset($productcate['cate']['subcate']))
-                        @forelse($productcate['cate']['subcate'] as $subcate)
-                        <ul>
-                            <li class=''><a href='{{URL::to('/')}}/product-sub-category-{{$subcate['id']}}'><span><?php echo $subcate['name']; ?> </span></a>
+                        @forelse ($productAndSubProduct as $productcate)
+                            <li class="@if(isset($productcate['cate']['subcate'])) {{'active has-sub'}}  @endif">
+                                <a href="{{URL::to('/')}}/product-category-{{$productcate['cate']['id']}}">
+                                    <span><?php echo $productcate['cate']['name']; ?></span>
+                                </a>
+                                @if(isset($productcate['cate']['subcate']))
+                                    @forelse($productcate['cate']['subcate'] as $subcate)
+                                        <ul>
+                                            <li class=''><a href='{{URL::to('/')}}/product-sub-category-{{$subcate['id']}}'><span><?php echo $subcate['name']; ?> </span></a>
+                                            </li>
+                                        </ul>
+                                    @empty
+                                    @endforelse
+                                @endif
                             </li>
-                        </ul>
                         @empty
                         @endforelse
-                        @endif
-                    </li>
-                    @empty
-                    @endforelse
                     @endif
                 </ul>
             </div>
         </div><!--/category-products-->
 
-        <div class="brands_products support-online"><!--brands_products-->							
+        <div class="brands_products support-online"><!--brands_products-->
             <div class="brands-name">
                 <h2>Hỗ trợ trực tuyến</h2>
                 <div class="h11"><!----></div>

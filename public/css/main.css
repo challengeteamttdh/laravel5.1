@@ -7,10 +7,15 @@
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background:;
-  position: relative;
-  font-weight:400px;
+  margin: 0px;
+  padding: 0px;
+  font-size: 13px;
+  font-family: arial;
+  background: url("../images/bg.jpeg") repeat fixed;
+}
+
+.container.layout {
+  background-color: mintcream;
 }
 
 ul li {
@@ -581,7 +586,7 @@ ul.sub-menu {
 }
 
 .item {
-  padding-left: 60px;
+  padding-left: auto;
 }
 
 
@@ -639,14 +644,16 @@ ul.sub-menu {
 }
 
 .control-carousel {
+  display: inline-block;
   position: absolute;
-  top: 50%;
+  top: 40%;
+  z-index: 5;
   font-size: 60px;
-  color: #C2C2C1;
+  color: #C2C2C1 !important;
 }
 
 .control-carousel:hover{
-  color: #FE980F ;
+  color: #FE980F !important;
 }
 
 .right {
@@ -664,11 +671,11 @@ ul.sub-menu {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 700;
-  margin: 0 auto 30px;
+  margin: auto;
   text-align: center;
   text-transform: uppercase;
   position: relative;
-  z-index:3;
+  /*z-index:3;*/
 }
 
 .left-sidebar h2:after, h2.title:after{
@@ -2520,4 +2527,27 @@ h2.title {
   color: #FE980F;
 }
 
+.carousel-inner > .item > img {
+  margin: 0 auto !important;
+}
 
+.peopleCarouselImg img {
+  width: 100%;
+  height: 350px;
+  max-height: 350px;
+}
+
+#SubProductLeftCategory .TopBar {
+  background: url("../images/testmenu.gif") repeat fixed;
+  height: 45px;
+  line-height:100px;
+  vertical-align:middle;
+}
+
+#SubProductLeftCategory .TopBar h2
+{
+  text-align: center;
+  height: 45px;
+  margin-top:0px; /* need this to clear the default margin */
+  margin-bottom:0px;
+}

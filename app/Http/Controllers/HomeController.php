@@ -38,13 +38,13 @@ class HomeController extends Controller {
         $articles = Article::with('author')->orderBy('position', 'DESC')->orderBy('created_at', 'DESC')->limit(4)->get();
         $limit = 4;
         $photoAlbums = PhotoAlbum::select(array(
-                    'photo_albums.id',
-                    'photo_albums.name',
-                    'photo_albums.description',
-                    'photo_albums.folder_id',
-                    DB::raw('(select filename from photos WHERE album_cover=1 AND deleted_at IS NULL and photos.photo_album_id=photo_albums.id LIMIT 1) AS album_image'),
-                    DB::raw('(select filename from photos WHERE photos.photo_album_id=photo_albums.id AND deleted_at IS NULL ORDER BY position ASC, id ASC LIMIT 1) AS album_image_first')
-                ))->limit(8)->get();
+            'photo_albums.id',
+            'photo_albums.name',
+            'photo_albums.description',
+            'photo_albums.folder_id',
+            DB::raw('(select filename from photos WHERE album_cover=1 AND deleted_at IS NULL and photos.photo_album_id=photo_albums.id LIMIT 1) AS album_image'),
+            DB::raw('(select filename from photos WHERE photos.photo_album_id=photo_albums.id AND deleted_at IS NULL ORDER BY position ASC, id ASC LIMIT 1) AS album_image_first')
+        ))->limit(8)->get();
 
 
 
@@ -55,7 +55,7 @@ class HomeController extends Controller {
         foreach ($homeProductCate as $key => $productcate) {
             $pro_home[$key]['name'] = $productcate->name;
             $pro_home[$key]['product'] = DB::table('product_sub_category')->where('product_sub_category.category_id', $productcate->id)
-                            ->join('products', 'products.sub_category_id', '=', 'product_sub_category.id')->get();
+                ->join('products', 'products.sub_category_id', '=', 'product_sub_category.id')->get();
         }
 
         $productAndSubProduct = $this->getcategory();
@@ -72,18 +72,18 @@ class HomeController extends Controller {
         $productAndSubProduct = $this->getcategory();
         $productcate = ProductCategory::find($productcateid);
         $productbycate = DB::table('product_sub_category')
-                ->where('product_sub_category.category_id', $productcateid)
-                ->join('products', 'products.sub_category_id', '=', 'product_sub_category.id')->get();
-        
+            ->where('product_sub_category.category_id', $productcateid)
+            ->join('products', 'products.sub_category_id', '=', 'product_sub_category.id')->get();
+
         return view('product.productbycate', compact('productcate','productbycate','productAndSubProduct'));
     }
     public function productsubcategory($productsubcateid) {
         $productAndSubProduct = $this->getcategory();
         $productsubcate = ProductSubCategory::find($productsubcateid);
-        
+
         $productbysubcate = DB::table('products')
-                ->where('products.sub_category_id', $productsubcateid)->get();
-        
+            ->where('products.sub_category_id', $productsubcateid)->get();
+
         return view('product.productbysubcate', compact('productsubcate','productbysubcate','productAndSubProduct'));
     }
     public function search(){
@@ -95,19 +95,19 @@ class HomeController extends Controller {
                 $search_result = DB::table('products')
                     ->where('title', 'like', '%'.$search.'%')
                     ->get();
-                
+
             }
 //            dd($search_result);
             return view('product.search', ['params'=>$params['search'],'search_result'=>$search_result]);
         }
-        
+
         return view('product.search');
     }
     public function product($productid){
         if(!empty($productid)){
             $product = Product::find($productid);
         }
-        
+
         return view('product.detail', ['product'=>$product,'productAndSubProduct'=> $this->getcategory()]);
     }
 

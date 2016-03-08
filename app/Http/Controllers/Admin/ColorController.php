@@ -92,7 +92,7 @@ class ColorController extends AdminController
      */
     public function destroy(Color $color)
     {
-        $color->delete();
+        $color->forceDelete();
     }
 
     /**

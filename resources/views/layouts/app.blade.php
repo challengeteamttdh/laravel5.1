@@ -30,8 +30,9 @@
 
     </head><!--/head-->
     <body>
+        <div class ="container layout">
         <!--Begin-header-->
-        <div class="container header">
+        <div class="header">
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                     <div id = "logo-header">
@@ -40,13 +41,13 @@
                 </div>
             </div>
         </div>
-        <div class="container menu">
+        <div class="menu">
             @include('partials.nav')
         </div>
         @yield('slider')
         <!--End-header-->
         <!--Begin-Form search-->
-        <div class="container">
+        <div class="search">
             <div class="row">
                 <div class="col-md-8 col-xs-12 col-sm-4">
                 </div>
@@ -76,7 +77,7 @@
         </div>
         <!--End-Formsarch-->
         <section>
-            <div class="container">
+            <div class="leftmenu">
                 <div class="row">
                     @include('partials.leftmenu')
                     @yield('content')
@@ -84,6 +85,7 @@
             </div>
         </section>
         @include('partials.footer')
+        </div>
         @yield('scripts')
         <script src="{{ asset('js/jquery.js') }}"></script>
         <script src="{{ asset('js/site.js') }}"></script>
