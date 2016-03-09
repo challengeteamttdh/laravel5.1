@@ -96,6 +96,7 @@
         <script src="{{ asset('js/jquery.prettyPhoto.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
         <script src="{{ asset('js/jcarousellite.js') }}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
         <script>
         //loading like youtube
         $(document).ready(function () {

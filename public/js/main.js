@@ -34,6 +34,13 @@ $(document).ready(function(){
         scroll: 1,
         vertical: true
     });
+	function initMap() {
+		var mapDiv = document.getElementById('map');
+		var map = new google.maps.Map(mapDiv, {
+			center: {lat: 44.540, lng: -78.546},
+			zoom: 8
+		});
+	}
 });
 $('ul.nav li.dropdown').hover(function() {
   $(this).find('.dropdown-menu').stop(true, true).delay(10).fadeIn(500);
