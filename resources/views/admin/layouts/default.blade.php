@@ -19,13 +19,19 @@
     <script src="{{ asset('js/admin.js') }}"></script>
     <script type="text/javascript">
         function changeType(id){
-            console.log($('.show-at-home').val());
+            var ischeck =  $('#show-at-home:checkbox:checked').length;
             $.ajax({
                 url: "{!! URL::to('/') !!}/admin/product/showathome/"+ id,
-                beforeSend: function( xhr ) {
-                  xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+                type: "get", //send it through get method
+                data:{ischeck:ischeck},
+                success: function(response) {
+                  //Do Something
+                },
+                error: function(xhr) {
+                  //Do Something to handle error
                 }
             });
+            
         }
     </script>
     @yield('styles')
