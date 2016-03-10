@@ -59,9 +59,8 @@ class ProductController extends AdminController {
         $product -> user_id = Auth::id();
 
         $picture = "";
-        if(Input::hasFile('image'))
-        {
-            $file = Input::file('image');
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
             $filename = $file->getClientOriginalName();
             $extension = $file -> getClientOriginalExtension();
             $picture = sha1($filename . time()) . '.' . $extension;
@@ -69,9 +68,9 @@ class ProductController extends AdminController {
         $product -> picture = $picture;
         $product -> save();
 
-        if(Input::hasFile('image'))
+        if($request->hasFile('image'))
         {
-            $destinationPath = public_path() . '/images/product/'.$product->id.'/';
+            $destinationPath = public_path() . '/appfiles/product/';
             Input::file('image')->move($destinationPath, $picture);
         }
     }
@@ -100,9 +99,8 @@ class ProductController extends AdminController {
     {
         $product -> user_id = Auth::id();
         $picture = "";
-        if(Input::hasFile('image'))
-        {
-            $file = Input::file('image');
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
             $filename = $file->getClientOriginalName();
             $extension = $file -> getClientOriginalExtension();
             $picture = sha1($filename . time()) . '.' . $extension;
@@ -110,9 +108,9 @@ class ProductController extends AdminController {
         $product -> picture = $picture;
         $product -> update($request->except('image'));
 
-        if(Input::hasFile('image'))
+        if($request->hasFile('image'))
         {
-            $destinationPath = public_path() . '/images/product/'.$product->id.'/';
+            $destinationPath = public_path() . '/appfiles/product/';
             Input::file('image')->move($destinationPath, $picture);
         }
     }
