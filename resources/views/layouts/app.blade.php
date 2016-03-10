@@ -110,6 +110,7 @@
         (function ($) {
             $(document).ready(function () {
                 $('#cssmenu li.has-sub>a').on('click', function () {
+                    return false;
                     $(this).removeAttr('href');
                     var element = $(this).parent('li');
                     if (element.hasClass('open')) {
