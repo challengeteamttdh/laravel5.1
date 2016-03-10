@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.appnonmenu')
 @section('title') About :: @parent @stop
 @section('content')
-<div class="col-md-9 col-xs-12 col-sm-9">
+<div class="col-md-12 col-xs-12 col-sm-12">
     <div class="about">
         <h2>Giới thiệu</h2>
         <div>
