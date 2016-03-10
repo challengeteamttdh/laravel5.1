@@ -1,7 +1,7 @@
 <footer id="footer"><!--Footer-->
     <div class="row footer-widget">
         <div class="col-sm-6 footer_ct">
-            <p><a href="http://noithatchangson.vn/"><span style="font-size:16px"><strong>NỘI THẤT NGỌC
+            <p><a href="#"><span style="font-size:16px"><strong>NỘI THẤT NGỌC
                             DŨNG</strong></span></a></p>
             <p><a href="http://noithatngocdung.vn/">http://noithatngocdung.vn</a></p>
             <p>Địa chỉ xưởng&nbsp;: Dị Nậu -&nbsp;Thạch Thất - Hà Nội - Việt Nam</p>

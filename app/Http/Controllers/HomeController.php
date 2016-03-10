@@ -107,8 +107,9 @@ class HomeController extends Controller {
         if(!empty($productid)){
             $product = Product::find($productid);
         }
-
-        return view('product.detail', ['product'=>$product,'productAndSubProduct'=> $this->getcategory()]);
+        $category = $product->sub_category_id;
+        $commonCate = Product::where('sub_category_id', '=', $category)->where('id', '!=', $productid)->paginate(3);
+        return view('product.detail', ['product'=>$product,'productAndSubProduct'=> $this->getcategory(),'commonCate'=>$commonCate]);
     }
 
 }
