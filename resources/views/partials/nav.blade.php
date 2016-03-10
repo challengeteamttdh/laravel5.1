@@ -4,7 +4,6 @@
         <div class="collapse navbar-collapse menu-bar" id="bs-example-navbar-collapse-1 ">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{{URL::to('/')}}">Trang Chủ <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Giới Thiệu</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tủ Bếp </a>
                     <ul class="dropdown-menu">
