@@ -730,3 +730,9 @@ p {
     line-height: 29px;
     border-left: solid 1px #fff;
 }
+#ProductDetail .detail:hover ,
+
+#ProductDetail .order:hover {
+  background: #e4c759;
+  color: #fff;
+}
