@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Photo;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller {
@@ -14,12 +14,13 @@ class PagesController extends Controller {
 
 	public function about()
 	{
-		return view('pages.about');
+            $about = Photo::find(1);
+            return view('pages.about',  compact('about'));
 	}
 
 	public function contact()
 	{
-		return view('pages.contact');
+            return view('pages.contact');
 	}
 
 }
