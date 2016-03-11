@@ -35,6 +35,12 @@ Route::get('language/{lang}', function($lang){
     return redirect('about');
 });
 
+/***************    Admin Login LogOut routes  **********************************/
+get('/register', array('as' => 'register', 'uses' => 'Auth\AuthController@getRegister'));
+post('/register', array('as' => 'register', 'uses' => 'Auth\AuthController@postRegister'));
+get('/admin', array('as' => 'login', 'uses' => 'Auth\AuthController@getLogin'));
+post('/admin', array('as' => 'login', 'uses' => 'Auth\AuthController@postLogin'));
+
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
