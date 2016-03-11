@@ -1,5 +1,5 @@
 <?php
-
+ini_set('eaccelerator.enable', 0);
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
