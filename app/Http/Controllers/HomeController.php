@@ -9,6 +9,7 @@ use App\ProductCategory;
 use App\ProductSubCategory;
 use App\Product;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Input;
 
 class HomeController extends Controller {
 
@@ -87,21 +88,30 @@ class HomeController extends Controller {
         return view('product.productbysubcate', compact('productsubcate','productbysubcate','productAndSubProduct'));
     }
     public function search(){
-        if(Request::isMethod('post')){
-            $params= Request::all();
-            $search_result;
-            if(!empty($params['search'])){
-                $search = $params['search'];
-                $search_result = DB::table('products')
-                    ->where('title', 'like', '%'.$search.'%')
-                    ->get();
-
-            }
-//            dd($search_result);
-            return view('product.search', ['params'=>$params['search'],'search_result'=>$search_result]);
+//        if(Request::isMethod('post')){
+//            $params= Request::all();
+//            $search_result;
+//            if(!empty($params['search'])){
+//                $search = $params['search'];
+//                $search_result = DB::table('products')
+//                    ->where('title', 'like', '%'.$search.'%')
+//                    ->get();
+//
+//            }
+////            dd($search_result);
+//            return view('product.search', ['params'=>$params['search'],'search_result'=>$search_result]);
+//        }
+//
+//        return view('product.search');
+        $keyword = Input::get('search');
+        $searchTerms = explode(' ', $keyword);
+        $query = DB::table('products');
+        foreach($searchTerms as $term)
+        {
+            $query->where('title', 'LIKE', '%'. $term .'%');
         }
-
-        return view('product.search');
+        $results = $query->get();
+        return view('product.search', ['params'=>$keyword,'search_result'=>$results]);
     }
     public function product($productid){
         if(!empty($productid)){
