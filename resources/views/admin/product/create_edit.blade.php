@@ -67,11 +67,11 @@
             </div>
         </div>
         <div
-                class="form-group {!! $errors->has('picture') ? 'error' : '' !!} ">
+                class="form-group {{ $errors->has('image') ? 'error' : '' }}">
             <div class="col-lg-12">
-                {!! Form::label('source', trans("admin/article.picture"), array('class' => 'control-label')) !!}
-                <input name="picture"
-                       type="file" class="uploader" id="image" value="Upload"/>
+                <label class="control-label" for="image">
+                    {{ trans("admin/photo.picture") }}</label>
+                <input name="image" type="file" class="uploader" id="image" value="Upload"/>
             </div>
 
         </div>

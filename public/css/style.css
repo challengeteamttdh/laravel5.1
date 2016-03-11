@@ -307,7 +307,7 @@ body {
 
 /* category home */
 .SubProductHomePageGroup1 {
-    width: 730px;
+    width: auto;
     margin-bottom: 32px;
 }
 
@@ -665,6 +665,7 @@ p {
     padding: 7px 7px 0 8px;
     height: 221px;
     text-align: center;
+    margin-bottom: 6px;
 }
 #ProductDetail .ItemImageFrame {
     display: block;
