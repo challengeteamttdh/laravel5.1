@@ -1,13 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.appnonmenu')
 
 {{-- Web site Title --}}
 @section('title') {!!  trans('site/user.login') !!} :: @parent @stop
 
 {{-- Content --}}
 @section('content')
-    <div class="col-md-9 col-xs-12 col-sm-9">
+    <div class="container">
         <h2>{!! trans('site/user.login_to_account') !!}</h2>
-        <div class="row">
+        <div class="">
             {!! Form::open(array('url' => URL::to('auth/login'), 'method' => 'post', 'files'=> true)) !!}
             <div class="form-group  {{ $errors->has('email') ? 'has-error' : '' }}">
                 {!! Form::label('email', "E-Mail Address", array('class' => 'control-label')) !!}

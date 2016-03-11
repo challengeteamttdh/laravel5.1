@@ -2,7 +2,7 @@
 
 return [
 	'login' => 'Login',
-	'login_to_account' => 'Login into your account',
+	'login_to_account' => 'Đăng nhập vào tài khoản',
 	'submit' => 'Submit',
 	'register' => 'Create a new account',
 	'remember' => 'Remember',
