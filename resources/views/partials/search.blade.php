@@ -9,15 +9,6 @@
                     <div class="form-group search-cat">
                         <input type="text" name="search" class="form-control" id="search" placeholder="Nhập để tìm">
                     </div>
-                    <!--                            <div class="form-group search-produce">
-                                                    <select class="form-control" id="sel2">
-                                                        <option>Tìm theo nhà sản xuất</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                        <option>4</option>
-                                                    </select>
-                                                </div>-->
                     <button type="submit" class="btn btn-default btn-search">
                         Tìm kiếm
                     </button>
