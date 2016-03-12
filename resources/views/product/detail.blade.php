@@ -14,7 +14,7 @@
                 <div class="slider">
                     <div id="ListImagePreview">              
                         <div class="khungAnhDau JsImageFrame">
-                            <div class="group1 cboxElement" href="{{$product->picture}}" title="{{$product->title}}"><img style="position: absolute; z-index: 1; top: 0px; left: -32.3889px; height: 253px; width: 449.778px;" alt="{{$product->title}}" class="" src="{{$product->picture}}"></div>
+                            <a class="group1 cboxElement" href="/appfiles/product/{{$product->picture}}" title="{{$product->title}}"><img style="position: absolute; z-index: 1; top: 0px; left: -32.3889px; height: 253px; width: 449.778px;" alt="{{$product->title}}" class="" src="/appfiles/product/{{$product->picture}}"></a>
                         </div>
                         <div class="h5"><!----></div>
                     </div>
@@ -45,8 +45,8 @@
                 <div class="TopTitle">Thông tin chi tiết</div>
                 <div class="h13"><!----></div>
                 <div class="desc">
-                    <p>
-                        <img alt="" src="{{$product->picture}}" style="width: 700px; height: 460px;"></p>
+                    <p>{!! $product->content !!}</p>
+                    <p><img alt="" src="/appfiles/product/{{$product->picture}}" style="width: 700px; height: 460px;"></p>
                 </div>
                 <div class="h25"><!----></div>
             </div>
