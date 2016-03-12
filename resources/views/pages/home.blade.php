@@ -55,7 +55,7 @@
                         </a>
                         <div class="h9"><!----></div>
                         <h3>
-                            <a class="title" href="{{ URL::to('') }}/product-{{$product->id}}" title="{{$product->name}}">{{$product->name}}</a>
+                            <a class="title" href="{{ URL::to('') }}/product-{{$product->id}}" title="{{$product->title}}">{{$product->title}}</a>
                         </h3>
                         <div class="h5"><!----></div>
                         <div class="code">Mã sp: <span>{{$product->product_code}}</span></div>

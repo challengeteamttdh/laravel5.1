@@ -38,7 +38,7 @@ class HomeController extends Controller {
     public function index() {
         $productAndSubProduct = $this->getcategory();
         $articles = Article::with('author')->orderBy('position', 'DESC')->orderBy('created_at', 'DESC')->limit(4)->get();
-        $limit = 4;
+        $limit = 10;
         $photoAlbums = PhotoAlbum::select(array(
             'photo_albums.id',
             'photo_albums.name',
