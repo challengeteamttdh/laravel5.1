@@ -355,13 +355,27 @@ ul.sub-menu {
 **************************/
 
 #footer {
-    background: #F0F0E9;
+    overflow: hidden;
+    min-height: 170px;
+    background: url("../images/footer_bg.jpg") no-repeat;
+    width: 100%;
+    margin: 0 auto;
 }
-
 
 .footer-top .container {
     border-bottom: 1px solid #E0E0DA;
     padding-bottom: 20px;
+}
+
+.right-footer {
+    padding-top: 15px;
+}
+
+#map {
+    padding-top: 10px;
+    width: 80%;
+    height: 200px;
+    margin: 0 auto;
 }
 
 .companyinfo {
@@ -2558,15 +2572,17 @@ h2.title {
 
 .footer_ct {
     padding-top: 15px;
-    padding-left: 15px;
+    padding-left: 30px;
     font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
 }
 
-#map {
-    width: 400px;
-    height: 200px;
-    margin-left: 75px;
-}
+/*#map {*/
+    /*width: 400px;*/
+    /*height: 200px;*/
+    /*margin-left: 75px;*/
+/*}*/
 
 //contact
 .contact-title{
@@ -2615,6 +2631,7 @@ h2.title {
 }
 .contact .form{
     margin-bottom: 50px;
+    font-size: 14px;
 }
 
 
@@ -2637,7 +2654,9 @@ h2.title {
     font-size: 18px;
 }
 .contact{
-    margin-top: -24px;
+    width: 50%;
+    MARGIN-LEFT: auto;
+    margin-right: auto;
 }
 .contact p{
     margin-bottom: 5px;

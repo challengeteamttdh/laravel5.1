@@ -13,20 +13,20 @@
         <h3 class="contact-title">Liên hệ với chúng tôi</h3>
         <form class="form">
             <p class="name">
-                <input type="text" name="name" id="name" placeholder="Họ và tên" />
                 <label for="name">Họ và tên</label>
+                <input type="text" name="name" id="name" placeholder="Họ và tên" />
             </p>
             <p class="name">
+                 <label for="adress">Địa chỉ</label>
                 <input type="text" name="adress" id="name" placeholder="Địa chỉ" />
-                <label for="adress">Địa chỉ</label>
             </p>
             <p class="name">
-                <input type="text" name="adress" id="name" placeholder="Số điện thoại" />
                 <label for="adress">Số điện thoại</label>
+                <input type="text" name="adress" id="name" placeholder="Số điện thoại" />
             </p>
             <p class="email">
-                <input type="text" name="email" id="email" placeholder="mail@example.com" />
                 <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="mail@example.com" />
             </p>
             <p class="text">
                 <textarea name="text" placeholder="Gửi tin nhắn cho chúng tôi" /></textarea>

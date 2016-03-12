@@ -42,11 +42,11 @@
             <div class="TopBar">
                 <div class="TopBarTitle">
                     <h2>
-                        <a href="#" title="{{$pro['name']}}">{{$pro['name']}}</a>
+                        <a href="{{URL::to('/')}}/product-category-{{$pro['id']}}" title="{{$pro['name']}}">{{$pro['name']}}</a>
                     </h2>
                 </div>    
             </div>
-            <a class="viewAll" href="#" title="{{$pro['name']}}">Xem tất cả »</a>
+            <a class="viewAll" href="{{URL::to('/')}}/product-category-{{$pro['id']}}" title="{{$pro['name']}}">Xem tất cả »</a>
             <div class="cb h0"><!----></div>
             <div class="container-productcate">
                 @if($pro['product'])
@@ -68,7 +68,7 @@
                                 <span class="price2">Liên hệ</span>
                             </div>
                             <a class="detail" href="{{ URL::to('') }}/product-{{$product->id}}">Chi tiết</a>
-                            <a class="order" href="#">Mua hàng</a>
+                            <a class="order" href="{{ URL::to('contact') }}">Mua hàng</a>
                             <div class="cb h1"><!----></div>
                         </div>
                     </div>

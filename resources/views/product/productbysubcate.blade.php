@@ -20,7 +20,7 @@
                     <div class="item">
                         <div class="itemContent">
                             <a class="JsImageFrame" href="{{ URL::to('') }}/product-{{$product->id}}" title="{{$product->title}}">
-                                <img alt="{{$product->title}}" class="" src="http://tubephoanganh.com/pic/products/DSC_0016635916761289785577.jpg.ashx" style="position: absolute; z-index: 1; top: 0px; left: -22.4444px; height: 140px; width: 248.889px;">
+                                <img alt="{{$product->title}}" class="" src="/appfiles/product/{{$product->picture}}" style="position: absolute; z-index: 1; top: 0px; left: -22.4444px; height: 140px; width: 248.889px;">
                             </a>
                             <div class="h9"><!----></div>
                             <h3>
@@ -33,7 +33,7 @@
                             <span class="price2">Liên hệ</span>
                         </div>
                         <a class="detail" href="{{ URL::to('') }}/product-{{$product->id}}">Chi tiết</a>
-                        <a class="order" href="#">Mua hàng</a>
+                        <a class="order" href="{{ URL::to('contact') }}">Mua hàng</a>
                         <div class="cb h1"><!----></div>
                     </div>
                 </div>
