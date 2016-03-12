@@ -264,8 +264,8 @@ body {
 #cssmenu ul ul li a {
     cursor: pointer;
     border-bottom: 1px solid #32373e;
-    border-left: 1px solid #32373e;
-    border-right: 1px solid #32373e;
+/*    border-left: 1px solid #32373e;
+    border-right: 1px solid #32373e;*/
     padding: 10px 20px;
     z-index: 1;
     text-decoration: none;

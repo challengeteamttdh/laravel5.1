@@ -10,7 +10,7 @@
             </div>
             <div class ="col-md-8 col-lg-8 col-sm-8 col-xs-12">
                 <div class ="sologan-header">
-                    <strong>NỘI THẤT NGỌC DŨNG MANG VẺ ĐẸP ĐẾN TỪNG NGÔI NHÀ
+                    <strong>NỘI THẤT NGỌC DŨNG MANG VẺ ĐẸP ĐẾN TỪNG NGÔI NHÀ<br>
                         UY TÍN CỦA CHÚNG TÔI LÀ SỰ HÀI LÒNG CỦA KHÁCH HÀNG</strong>
                 </div>
 
