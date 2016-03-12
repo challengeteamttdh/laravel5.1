@@ -237,8 +237,11 @@ body {
     text-decoration: none;
     font-size: 13px;
     color: #eeeeee;
-    background: #49505a;
+    background: #C48E50;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.navbar-default .navbar-nav>li>a {
+    font-size: 14px;
 }
 #cssmenu ul ul li:hover > a,
 #cssmenu ul ul li.open > a,
@@ -297,12 +300,12 @@ body {
     background: url("../images/LeftCategoryTopBar.png") no-repeat;
     min-height: 48px;
     color: white;
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
-    padding-top: 17px;
+    padding-top: 15px;
     font-weight: bold;
     border-top-right-radius: 3px;
-    text-transform: capitalize;
+    text-transform: uppercase;
 }
 
 /* category home */

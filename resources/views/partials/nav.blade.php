@@ -4,16 +4,17 @@
         <div class="collapse navbar-collapse menu-bar" id="bs-example-navbar-collapse-1 ">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{{URL::to('/')}}">Trang Chủ <span class="sr-only">(current)</span></a></li>
-                @if(isset($productAndSubProduct))
-                @forelse ($productAndSubProduct as $productcate)
-                @if($productcate['cate']['id'] == 1 || $productcate['cate']['id'] ==2 || $productcate['cate']['id'] ==3)
+
                 <li class="dropdown">
-                    <a href="{{URL::to('/')}}/product-category-{{$productcate['cate']['id']}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $productcate['cate']['name']; ?> </a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sản Phẩm </a>
+                    <ul class="dropdown-menu">
+                        @forelse ($productAndSubProduct as $productcate)
+                        <li><a href="{{URL::to('/')}}/product-category-{{$productcate['cate']['id']}}"><?php echo $productcate['cate']['name']; ?> </a></li>
+                        @empty
+                        @endforelse
+                    </ul>
                 </li>
-                @endif
-                @empty
-                @endforelse
-                @endif
+
                 <!--                <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Thiết bị bếp </a>
                                     <ul class="dropdown-menu">
@@ -27,6 +28,9 @@
                 </li>
                 <li class="{{ (Request::is('contact') ? 'active' : '') }}">
                     <a href="{{ URL::to('contact') }}">Liên hệ</a>
+                </li>
+                <li class="">
+                    <a href="{{ URL::to('contact') }}">Báo Giá</a>
                 </li>
                 {{--@if (Auth::guest())--}}
                 {{--<li class="{{ (Request::is('auth/login') ? 'active' : '') }}"><a href="{{ URL::to('auth/login') }}"><i--}}
