@@ -36,6 +36,7 @@ class HomeController extends Controller {
     }
 
     public function index() {
+        $productAndSubProduct = $this->getcategory();
         $articles = Article::with('author')->orderBy('position', 'DESC')->orderBy('created_at', 'DESC')->limit(4)->get();
         $limit = 4;
         $photoAlbums = PhotoAlbum::select(array(
@@ -60,7 +61,6 @@ class HomeController extends Controller {
                 ->join('products', 'products.sub_category_id', '=', 'product_sub_category.id')->get();
         }
 
-        $productAndSubProduct = $this->getcategory();
         $sliders = Product::where('showathome', 1)->take(3)->get();
         if(count($sliders)<3){
             $sliders = Product::orderByRaw("RAND()")->take(3)->get();
@@ -115,7 +115,7 @@ class HomeController extends Controller {
             $query->where('title', 'LIKE', '%'. $term .'%');
         }
         $results = $query->get();
-        return view('product.search', ['params'=>$keyword,'search_result'=>$results]);
+        return view('product.search', ['params'=>$keyword,'search_result'=>$results,'productAndSubProduct'=>  $this->getcategory()]);
     }
     public function product($productid){
         if(!empty($productid)){
