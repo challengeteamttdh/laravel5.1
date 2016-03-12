@@ -19,16 +19,22 @@
     <script src="{{ asset('js/admin.js') }}"></script>
     <script type="text/javascript">
         function changeType(id){
-            var ischeck =  $('#show-at-home:checkbox:checked').length;
+            var ischeck =  $('.show-at-home-'+id).is(':checked');
+            var show=0;
+            if(ischeck){
+                show = 1;
+            }
             $.ajax({
                 url: "{!! URL::to('/') !!}/admin/product/showathome/"+ id,
                 type: "get", //send it through get method
-                data:{ischeck:ischeck},
+                data:{ischeck:show},
                 success: function(response) {
                   //Do Something
+                  console.log(response);
                 },
                 error: function(xhr) {
                   //Do Something to handle error
+                  console.log(xhr);
                 }
             });
             
