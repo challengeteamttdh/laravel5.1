@@ -394,9 +394,12 @@ body {
 .SubProductHomePageGroup1 .viewAll {
     display: block;
     float: right;
-    color: #333;
-    float: right;
-    margin-top: 16px;
+    margin-top: 7px;
+    margin-right: 5px;
+    background: #BE4312;
+    color: white;
+    padding: 7px 10px;
+    border-radius: 5px;
 }
 .SubProductHomePageGroup1 .item {
     width: 219px;

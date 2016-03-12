@@ -2673,3 +2673,6 @@ h2.title {
     margin: 21px 0px;
 }
 /*-------*/
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }

@@ -51,11 +51,11 @@
                 <div class="item">
                     <div class="itemContent">
                         <a class="JsImageFrame" href="{{ URL::to('') }}/product-{{$product->id}}" title="{{$product->name}}">
-                            <img alt="{{$product->name}}" class="" src="{{ URL::to('') }}/appfiles/product/{{$product->picture}}" style="position: absolute; z-index: 1; top: 0px; left: -22.4444px; height: 140px; width: 248.889px;">
+                            <img alt="{{$product->name}}" class="grow" src="{{ URL::to('') }}/appfiles/product/{{$product->picture}}" style="position: absolute; z-index: 1; top: 0px; left: -22.4444px; height: 140px; width: 248.889px;">
                         </a>
                         <div class="h9"><!----></div>
                         <h3>
-                            <a class="title" href="{{ URL::to('') }}/product-{{$product->id}}" title="{{$product->title}}">{{$product->title}}</a>
+                            <a class="title " href="{{ URL::to('') }}/product-{{$product->id}}" title="{{$product->title}}">{{$product->title}}</a>
                         </h3>
                         <div class="h5"><!----></div>
                         <div class="code">Mã sp: <span>{{$product->product_code}}</span></div>
