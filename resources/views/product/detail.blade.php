@@ -45,7 +45,7 @@
                 <div class="TopTitle">Thông tin chi tiết</div>
                 <div class="h13"><!----></div>
                 <div class="desc">
-                    <p>{{ $product->content }}</p>
+                    <p>{!! $product->content !!}</p>
                     <p><img alt="" src="/appfiles/product/{{$product->picture}}" style="width: 700px; height: 460px;"></p>
                 </div>
                 <div class="h25"><!----></div>
