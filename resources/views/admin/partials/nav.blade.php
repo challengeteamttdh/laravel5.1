@@ -64,18 +64,18 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="glyphicon glyphicon-bullhorn"></i> Articles
+                        <i class="glyphicon glyphicon-bullhorn"></i> Bài viết
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav collapse">
                         <li>
                             <a href="{{url('admin/articlecategory')}}">
-                                <i class="glyphicon glyphicon-list"></i>  Article categories
+                                <i class="glyphicon glyphicon-list"></i>  Danh mục bài viết
                             </a>
                         </li>
                         <li>
                             <a href="{{url('admin/article')}}">
-                                <i class="glyphicon glyphicon-bullhorn"></i> Articles
+                                <i class="glyphicon glyphicon-bullhorn"></i> Bài viết
                             </a>
                         </li>
                     </ul>
@@ -100,11 +100,11 @@
                 </li>
                 <li>
                     <a href="{{url('admin/user')}}">
-                        <i class="glyphicon glyphicon-user"></i> Users
+                        <i class="glyphicon glyphicon-user"></i> Người dùng
                     </a>
                 </li>
                 <li>
-                    <a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i> Logout</a>
+                    <a href="{{ URL::to('auth/logout') }}"><i class="fa fa-sign-out"></i> Đăng xuất</a>
                 </li>
             </ul>
         </div>
