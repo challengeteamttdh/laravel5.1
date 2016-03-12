@@ -54,6 +54,7 @@ class HomeController extends Controller {
 
         $pro_home = array();
         foreach ($homeProductCate as $key => $productcate) {
+            $pro_home[$key]['id'] = $productcate->id;
             $pro_home[$key]['name'] = $productcate->name;
             $pro_home[$key]['product'] = DB::table('product_sub_category')->where('product_sub_category.category_id', $productcate->id)
                 ->join('products', 'products.sub_category_id', '=', 'product_sub_category.id')->get();
