@@ -2602,7 +2602,7 @@ h2.title {
 .contact input,.contact textarea {
     padding: 10px;
     border: 1px solid #E5E5E5;
-    width: 200px;
+    width: 82%;
     color: #999999;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
     -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
@@ -2610,7 +2610,7 @@ h2.title {
 }
 
 .contact textarea {
-    width: 400px;
+    width:  82%;
     height: 150px;
     max-width: 400px;
     line-height: 18px;
@@ -2627,7 +2627,7 @@ h2.title {
 .contact .form label {
     margin-left: 10px;
     color: #999999;
-    
+    width: 100%;
 }
 .contact .form{
     margin-bottom: 50px;
