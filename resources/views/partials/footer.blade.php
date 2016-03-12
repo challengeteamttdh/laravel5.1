@@ -1,15 +1,17 @@
 <footer id="footer"><!--Footer-->
     <div class="row footer-widget">
         <div class="col-sm-6 footer_ct">
-            <p><a href="#"><span style="font-size:16px"><strong>NỘI THẤT NGỌC
-                            DŨNG</strong></span></a></p>
+            <p><span style="font-size:16px"><strong>NỘI THẤT NGỌC
+                            DŨNG</strong></span></p>
             <p><a href="http://noithatngocdung.vn/">http://noithatngocdung.vn</a></p>
             <p>Địa chỉ xưởng&nbsp;: Dị Nậu -&nbsp;Thạch Thất - Hà Nội - Việt Nam</p>
             <p>SĐT: 0983438810</p>
             <p>Email: noithatngocdung.vn@gmail.com</p>
             <p>Bản quyền thuộc về Cơ Sở Sản Xuất Và&nbsp;Tư Vấn Thiết Kế Nội Thất Ngọc Dũng</p>
         </div>
-        <div class="col-sm-6" id="map"></div>
+        <div class="col-sm-6 right-footer">
+            <div id="map"></div>
+        </div>
         <script>
             function initMap() {
                 var mapDiv = document.getElementById('map');
