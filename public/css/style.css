@@ -816,3 +816,6 @@ p {
     line-height: 23px;
     background: none;
 }
+html {
+     padding: 0px !important; 
+}
