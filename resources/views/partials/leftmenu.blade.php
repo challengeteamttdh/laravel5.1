@@ -34,15 +34,15 @@
                 <div class="support">
                     <span class="title">Hỗ trợ mua hàng </span>
                     <div class="h8"><!----></div>
-                    <span class="hotline">0979 689 829</span>
+                    <span class="hotline">0983.438.810</span>
                 </div>
                 <div class="h22"><!----></div>
 
                 <div class="item">
                     <div class="image"></div>
-                    <a class="title" href="">Mr Long</a>
+                    <a class="title" href="">Mr.NGỌC DŨNG</a>
                     <div class="h6"><!----></div>
-                    <span class="title">0979.689.829</span>
+                    <span class="title">0983.438.810</span>
                     <div class="cb h15"><!----></div>
                 </div>
             </div>
