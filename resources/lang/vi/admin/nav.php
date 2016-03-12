@@ -6,14 +6,14 @@
  * Time: 20:29
  */
 return [
-    'home' => 'Go to frontend',
+    'home' => 'Về trang chủ',
     'dashboard' => 'Dashboard',
-    'language' => 'Language',
-    'pdm' => 'Product Management',
-    'pdc' => 'Product Categories',
-    'pd' => 'Product',
-    'pdsc' => 'Product SubCategory',
-    'color' => 'Color',
-    'material' => 'Material',
-    'manufacturer' => 'Manufacturer',
+    'language' => 'Ngôn ngữ',
+    'pdm' => 'Quản lý sản phẩm',
+    'pdc' => 'Danh mục sản phẩm',
+    'pd' => 'Sản phẩm',
+    'pdsc' => 'Danh mục sản phẩm phụ',
+    'color' => 'Màu',
+    'material' => 'Vật liệu',
+    'manufacturer' => 'Nhà sản xuất',
 ];

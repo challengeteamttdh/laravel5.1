@@ -159,7 +159,7 @@ class ProductController extends AdminController {
         return Datatables::of($product)
                 
         ->add_column('show_at_home', 
-            '<input class="show-at-home" id="show-at-home" onclick="changeType({{$id}})" type="checkbox"  name="showathome" {{($showathome == 1)? "checked" : ""}} >')
+            '<input class="show-at-home-{{$id}}"  onclick="changeType({{$id}})" type="checkbox"  name="showathome" {{($showathome == 1)? "checked" : ""}} >')
         ->add_column('actions', '<a href="{{{ URL::to(\'admin/product/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
                 <a href="{{{ URL::to(\'admin/product/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
                 <input type="hidden" name="row" value="{{$id}}" id="row">')

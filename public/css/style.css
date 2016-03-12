@@ -60,6 +60,7 @@ body {
     color: #ff404a;
     text-shadow: 1px 1px #545454;
     font-weight: bold;
+    font-size: 15px;
 }
 .support-online .brands-name .item {
     display : block;
@@ -397,9 +398,12 @@ body {
 .SubProductHomePageGroup1 .viewAll {
     display: block;
     float: right;
-    color: #333;
-    float: right;
-    margin-top: 16px;
+    margin-top: 7px;
+    margin-right: 5px;
+    background: #BE4312;
+    color: white;
+    padding: 7px 10px;
+    border-radius: 5px;
 }
 .SubProductHomePageGroup1 .item {
     width: 219px;
@@ -768,6 +772,11 @@ p {
     border-left: solid 1px #fff;
 }
 
+#ProductDetail .detail:hover ,
+#ProductDetail .order:hover {
+  background: #e4c759;
+  color: #fff;
+}
 
 .support-online .brands-name h2{
     background: url("../images/LeftCategoryTopBar.png") no-repeat;
@@ -807,10 +816,3 @@ p {
     line-height: 23px;
     background: none;
 }
-#company_name{
-    font-size: 30px;
-    font-family: google;
-    text-transform: capitalize;
-    color: #444444;
-}
-
