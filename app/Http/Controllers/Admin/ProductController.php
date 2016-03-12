@@ -59,9 +59,8 @@ class ProductController extends AdminController {
         $product -> user_id = Auth::id();
 
         $picture = "";
-        if(Input::hasFile('image'))
-        {
-            $file = Input::file('image');
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
             $filename = $file->getClientOriginalName();
             $extension = $file -> getClientOriginalExtension();
             $picture = sha1($filename . time()) . '.' . $extension;
@@ -69,9 +68,9 @@ class ProductController extends AdminController {
         $product -> picture = $picture;
         $product -> save();
 
-        if(Input::hasFile('image'))
+        if($request->hasFile('image'))
         {
-            $destinationPath = public_path() . '/images/product/'.$product->id.'/';
+            $destinationPath = public_path() . '/appfiles/product/';
             Input::file('image')->move($destinationPath, $picture);
         }
     }
@@ -100,9 +99,8 @@ class ProductController extends AdminController {
     {
         $product -> user_id = Auth::id();
         $picture = "";
-        if(Input::hasFile('image'))
-        {
-            $file = Input::file('image');
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
             $filename = $file->getClientOriginalName();
             $extension = $file -> getClientOriginalExtension();
             $picture = sha1($filename . time()) . '.' . $extension;
@@ -110,14 +108,17 @@ class ProductController extends AdminController {
         $product -> picture = $picture;
         $product -> update($request->except('image'));
 
-        if(Input::hasFile('image'))
+        if($request->hasFile('image'))
         {
-            $destinationPath = public_path() . '/images/product/'.$product->id.'/';
+            $destinationPath = public_path() . '/appfiles/product/';
             Input::file('image')->move($destinationPath, $picture);
         }
     }
     public function showAtHomepage($id){
-        dd($id);
+        $showathome = $_GET['ischeck'];
+        $product = Product::find($id);
+        $product->showathome = $showathome;
+        $product->save();
     }
 
     /**
@@ -152,17 +153,20 @@ class ProductController extends AdminController {
     public function data()
     {
         $product = Product::join('product_sub_category', 'product_sub_category.id', '=', 'products.sub_category_id')
-            ->select(array('products.id','products.showathome','products.title','product_sub_category.name as category',
-                'products.created_at'));
+            ->select(array('products.id','products.title','product_sub_category.name as category',
+                'products.created_at','products.showathome'));
+        
         return Datatables::of($product)
-            ->add_column('show_at_home', '<a href="{{{ URL::to(\'admin/product/\' . $id . \'/edit\' ) }}}" ></a>
-                <input class="show-at-home" onclick="changeType({{$id}})" type="checkbox" checked="{{$showathome == 1? checked : \'/\'/}}" checkname="vehicle" value="Bike">')
-            ->add_column('actions', '<a href="{{{ URL::to(\'admin/product/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
-                    <a href="{{{ URL::to(\'admin/product/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
-                    <input type="hidden" name="row" value="{{$id}}" id="row">')
-            ->remove_column('id')
-            ->remove_column('created_at')
+                
+        ->add_column('show_at_home', 
+            '<input class="show-at-home" id="show-at-home" onclick="changeType({{$id}})" type="checkbox"  name="showathome" {{($showathome == 1)? "checked" : ""}} >')
+        ->add_column('actions', '<a href="{{{ URL::to(\'admin/product/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
+                <a href="{{{ URL::to(\'admin/product/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
+                <input type="hidden" name="row" value="{{$id}}" id="row">')
+        ->remove_column('id')
+        ->remove_column('created_at')
+        ->remove_column('showathome')
 
-            ->make();
+        ->make();
     }
 }

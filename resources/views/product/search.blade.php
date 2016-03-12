@@ -1,12 +1,18 @@
 @extends('layouts.app')
 @section('content')
-<div class="col-sm-9 col-md-9 col-xs-12 padding-right">
-    <div class="features_items"><!--features_items-->
-        <h2 class="title text-center">Kết quả tìm kiếm với từ khóa: 
-            <b>@if(!empty($params)) {{$params}} @endif</b>
-        </h2>
-    </div><!--features_items-->
+<div class="col-sm-9 col-md-9 col-xs-12">
     <div class="SubProductHomePageGroup1">
+        <div class="TopBar">
+            <div class="TopBarTitle">
+                <h2>
+                    <a href="#" title="searchResult">Kết quả tìm kiếm với từ khóa:
+                        <b>@if(!empty($params)) {{$params}} @endif</b></a>
+                </h2>
+                <h2>
+                </h2>
+            </div>
+        </div>
+        <div class="cb h0"><!----></div>
         <div class="container-productcate">
             @if(isset($search_result))
             @foreach($search_result as $product)

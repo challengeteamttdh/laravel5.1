@@ -38,13 +38,9 @@
     </div>
     @yield('slider')
             <!--End-header-->
-    <!--Begin-Form search-->
-    @include('partials.search')
-            <!--End-Formsarch-->
     <section>
         <div class="leftmenu">
             <div class="row">
-                @include('partials.leftmenu')
                 @yield('content')
             </div>
         </div>

@@ -64,7 +64,7 @@ body {
 }
 #CommonStatistic{
     background: url("../images/StatBg.png") no-repeat;
-    width: 212px;
+    width: 220px;
     height: 92px;
     margin-bottom: 6px;
 
@@ -307,7 +307,7 @@ body {
 
 /* category home */
 .SubProductHomePageGroup1 {
-    width: 730px;
+    width: auto;
     margin-bottom: 32px;
 }
 
@@ -665,6 +665,7 @@ p {
     padding: 7px 7px 0 8px;
     height: 221px;
     text-align: center;
+    margin-bottom: 6px;
 }
 #ProductDetail .ItemImageFrame {
     display: block;
@@ -730,9 +731,10 @@ p {
     line-height: 29px;
     border-left: solid 1px #fff;
 }
-#ProductDetail .detail:hover ,
 
+#ProductDetail .detail:hover ,
 #ProductDetail .order:hover {
   background: #e4c759;
   color: #fff;
 }
+

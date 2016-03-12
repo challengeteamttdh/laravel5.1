@@ -55,7 +55,7 @@
                         <div class="item">
                             <div class="itemContent">
                                 <a class="JsImageFrame" href="{{ URL::to('') }}/product-{{$product->id}}" title="{{$product->name}}">
-                                    <img alt="{{$product->name}}" class="" src="http://tubephoanganh.com/pic/products/DSC_0016635916761289785577.jpg.ashx" style="position: absolute; z-index: 1; top: 0px; left: -22.4444px; height: 140px; width: 248.889px;">
+                                    <img alt="{{$product->name}}" class="" src="{{ URL::to('') }}/appfiles/product/{{$product->picture}}" style="position: absolute; z-index: 1; top: 0px; left: -22.4444px; height: 140px; width: 248.889px;">
                                 </a>
                                 <div class="h9"><!----></div>
                                 <h3>
