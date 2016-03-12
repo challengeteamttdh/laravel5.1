@@ -56,6 +56,7 @@ body {
     color: #ff404a;
     text-shadow: 1px 1px #545454;
     font-weight: bold;
+    font-size: 15px;
 }
 .support-online .brands-name .item {
     display : block;
@@ -764,6 +765,11 @@ p {
     border-left: solid 1px #fff;
 }
 
+#ProductDetail .detail:hover ,
+#ProductDetail .order:hover {
+  background: #e4c759;
+  color: #fff;
+}
 
 .support-online .brands-name h2{
     background: url("../images/LeftCategoryTopBar.png") no-repeat;

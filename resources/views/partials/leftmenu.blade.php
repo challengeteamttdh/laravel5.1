@@ -1,4 +1,4 @@
-<div class="col-md-3 col-xs-12 col-sm-3">
+r<div class="col-md-3 col-xs-12 col-sm-3">
     <div class="left-sidebar">
         <div class="panel-group category-products" id="accordian"><!--category-productsr-->
             <div class="category-panel">Danh Mục sản phẩm</div>
@@ -34,17 +34,10 @@
                 <div class="support">
                     <span class="title">Hỗ trợ mua hàng </span>
                     <div class="h8"><!----></div>
+                    <span class="hotline">Mr.Dũng</span>
                     <span class="hotline">0983.438.810</span>
                 </div>
                 <div class="h22"><!----></div>
-
-                <div class="item">
-                    <div class="image"></div>
-                    <a class="title" href="">Mr.NGỌC DŨNG</a>
-                    <div class="h6"><!----></div>
-                    <span class="title">0983.438.810</span>
-                    <div class="cb h15"><!----></div>
-                </div>
             </div>
         </div><!--/brands_products-->
 

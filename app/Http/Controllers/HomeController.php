@@ -60,7 +60,6 @@ class HomeController extends Controller {
             $pro_home[$key]['product'] = DB::table('product_sub_category')->where('product_sub_category.category_id', $productcate->id)
                 ->join('products', 'products.sub_category_id', '=', 'product_sub_category.id')->get();
         }
-
         $sliders = Product::where('showathome', 1)->take(3)->get();
         if(count($sliders)<3){
             $sliders = Product::orderByRaw("RAND()")->take(3)->get();
