@@ -11,18 +11,14 @@
             </ol>
 
             <div class="carousel-inner">
-                <div class="item active peopleCarouselImg">
-                    <img src="{{ URL::to('') }}/images/noithat/noithatdep.jpg" class="girl img-responsive"
-                         alt=""/>
-                </div>
-                <div class="item peopleCarouselImg">
-                    <img src="{{ URL::to('') }}/images/noithat/noi-that-phong-tho-6.jpg" class="girl img-responsive"
-                         alt=""/>
-                </div>
-                <div class="item peopleCarouselImg">
-                    <img src="{{ URL::to('') }}/images/noithat/noithatdep.jpg" class="girl img-responsive"
-                         alt=""/>
-                </div>
+                @foreach($sliders as $key=>$slider)
+                    <div class="item  peopleCarouselImg {{$key==1?'active':''}}">
+                        <a href="{{ URL::to('') }}/product-{{$slider->id}}">
+                        <img src="{{ URL::to('') }}/appfiles/product/{{$slider->picture}}" class="girl img-responsive"
+                                 alt="{{$slider->title}}"/>
+                        </a>
+                    </div>
+                @endforeach
             </div>
             <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
                 <i class="fa fa-angle-left"></i>

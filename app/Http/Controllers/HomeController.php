@@ -61,8 +61,11 @@ class HomeController extends Controller {
         }
 
         $productAndSubProduct = $this->getcategory();
-
-        return view('pages.home', compact('articles', 'photoAlbums', 'product_cate', 'productAndSubProduct', 'pro_home'));
+        $sliders = Product::where('showathome', 1)->take(3)->get();
+        if(count($sliders)<3){
+            $sliders = Product::orderByRaw("RAND()")->take(3)->get();
+        }
+        return view('pages.home', compact('articles', 'photoAlbums', 'product_cate', 'productAndSubProduct', 'pro_home','sliders'));
     }
 
     public function productdetail($param = null) {
