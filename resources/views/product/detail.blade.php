@@ -37,7 +37,7 @@
                     <div class="h10"><!----></div>
                     <div class="hotline"><span>Tel:</span> 0983438810</div>
                     <div class="h10"><!----></div>
-                    <a class="purchase" href="#"><span>Gửi liên hệ</span></a>
+                    <a class="purchase" href="{{ URL::to('contact') }}"><span>Gửi liên hệ</span></a>
                 </div>
                 <!--Hinh anh va mo ta chi tiet ve san phm-->
 
@@ -45,7 +45,7 @@
                 <div class="TopTitle">Thông tin chi tiết</div>
                 <div class="h13"><!----></div>
                 <div class="desc">
-                    <p>{!! $product->content !!}</p>
+                    <p>{{ $product->content }}</p>
                     <p><img alt="" src="/appfiles/product/{{$product->picture}}" style="width: 700px; height: 460px;"></p>
                 </div>
                 <div class="h25"><!----></div>

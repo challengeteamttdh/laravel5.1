@@ -2631,6 +2631,7 @@ h2.title {
 }
 .contact .form{
     margin-bottom: 50px;
+    font-size: 14px;
 }
 
 
@@ -2653,7 +2654,9 @@ h2.title {
     font-size: 18px;
 }
 .contact{
-    margin-top: -24px;
+    width: 50%;
+    MARGIN-LEFT: auto;
+    margin-right: auto;
 }
 .contact p{
     margin-bottom: 5px;
