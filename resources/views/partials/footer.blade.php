@@ -1,6 +1,6 @@
 <footer id="footer"><!--Footer-->
     <div class="row footer-widget">
-        <div class="col-sm-6 footer_ct">
+        <div class=" footer_ct">
             <p><span style="font-size:16px"><strong>NỘI THẤT NGỌC
                             DŨNG</strong></span></p>
             <p><a href="http://noithatngocdung.vn/">http://noithatngocdung.vn</a></p>
@@ -9,9 +9,10 @@
             <p>Email: noithatngocdung.vn@gmail.com</p>
             <p>Bản quyền thuộc về Cơ Sở Sản Xuất Và&nbsp;Tư Vấn Thiết Kế Nội Thất Ngọc Dũng</p>
         </div>
-        <div class="col-sm-6 right-footer">
+        <div class=" right-footer">
             <div id="map"></div>
         </div>
+        <div class="clearfix"></div>
         <script>
             function initMap() {
                 var mapDiv = document.getElementById('map');

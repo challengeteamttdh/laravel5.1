@@ -1,4 +1,4 @@
-<div class="col-md-3 col-xs-12 col-sm-3">
+<!--<div class="col-md-3 col-xs-12 col-sm-3">-->
     <div class="left-sidebar">
         <div class="panel-group category-products" id="accordian"><!--category-productsr-->
             <div class="category-panel">Danh Mục sản phẩm</div>
@@ -53,4 +53,4 @@
             </div>
         </div>
     </div>
-</div>
+<!--</div>-->

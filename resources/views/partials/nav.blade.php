@@ -2,7 +2,7 @@
     <nav class="nav navbar navbar-default">
         <div class="container-fluid">
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse menu-bar" id="bs-example-navbar-collapse-1 ">
+            <div class="navbar-collapse menu-bar" id="bs-example-navbar-collapse-1 ">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{URL::to('/')}}">Trang Chủ <span class="sr-only">(current)</span></a></li>
                     <li class="dropdown">

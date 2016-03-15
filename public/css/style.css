@@ -29,6 +29,8 @@ body {
 */
 .form-search {
     display: inline-block;
+    float: right;
+    margin-right: 15px;
 }
 .search-cat,.btn-search,.search-produce{
     float: left;
@@ -344,8 +346,9 @@ body {
 
 /* category home */
 .SubProductHomePageGroup1 {
-    width: auto;
+    width: 720px;
     margin-bottom: 32px;
+    float: right;
 }
 
 .SubProductHomePageGroup1 .TopBar{

@@ -31,7 +31,8 @@
 </section><!--/slider-->
 @endsection
 @section('content')
-<div class="col-sm-9 col-md-9 col-xs-12">
+<!--<div class="col-sm-9 col-md-9 col-xs-12">-->
+<div class="cate-home">
     @if($pro_home)
     @foreach($pro_home as $pro)
     <div class="SubProductHomePageGroup1">
@@ -76,5 +77,6 @@
     @endforeach
     @endif
 </div>
+<div class="clearfix"></div>
 @endsection
 

@@ -45,10 +45,10 @@
             <!--End-Formsarch-->
     <section>
         <div class="leftmenu">
-            <div class="row">
+            <!--<div class="row">-->
                 @include('partials.leftmenu')
                 @yield('content')
-            </div>
+            <!--</div>-->
         </div>
     </section>
     @include('partials.footer')

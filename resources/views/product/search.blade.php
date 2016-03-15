@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="col-sm-9 col-md-9 col-xs-12">
+<!--<div class="col-sm-9 col-md-9 col-xs-12">-->
     <div class="SubProductHomePageGroup1">
         <div class="TopBar">
             <div class="TopBarTitle">
@@ -42,6 +42,6 @@
             <div class="cb h0"><!----></div>
         </div>
     </div>
-</div>
+<!--</div>-->
 @endsection
 
