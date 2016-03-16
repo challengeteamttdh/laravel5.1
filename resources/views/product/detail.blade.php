@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title') Home :: @parent @stop
 @section('content')
-<div class="col-sm-9 col-md-9 col-xs-12 padding-right">
+<!--<div class="col-sm-9 col-md-9 col-xs-12 padding-right">-->
     <div id="ProductDetail">
         <div class="TopBar">
             <div class="TopBarTitle"><h1><a href="#">{{$product->title}}</a></h1></div>    
@@ -79,6 +79,7 @@
             <div class="h9"><!----></div>
         </div>
     </div>
-</div>
+<div class="clearfix"></div>
+<!--</div>-->
 @endsection
 

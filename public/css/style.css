@@ -506,6 +506,7 @@ body {
 #ProductDetail {
     width: 723px;
     margin-bottom: 32px;
+    float: right;
 }
 
 #ProductDetail .TopBar {

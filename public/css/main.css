@@ -729,6 +729,20 @@ ul.sub-menu {
     height: 0;
     z-index: -2;
 }
+.header-banner{
+    position: relative;
+}
+.header-banner .info-banner{
+    position: absolute;
+    bottom: 10px;
+    right: 25px;
+    font: normal 20px 'UTM Colossalis';
+    color: #ff404a;
+    text-shadow: 1px 1px #545454;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+}
 
 .left-sidebar h2:before{
     content: " ";
@@ -2604,9 +2618,9 @@ h2.title {
 }
 
 /*#map {*/
-    /*width: 400px;*/
-    /*height: 200px;*/
-    /*margin-left: 75px;*/
+/*width: 400px;*/
+/*height: 200px;*/
+/*margin-left: 75px;*/
 /*}*/
 
 //contact

@@ -17,24 +17,12 @@
                             @endforelse
                         </ul>
                     </li>
-                    <!--                <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Thiết bị bếp </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Máy hút mùi</a></li>
-                                            <li><a href="#">Bếp ga, bếp từ</a></li>
-                                            <li><a href="#">Chậu rửa,vòi rửa</a></li>					            
-                                        </ul>
-                                    </li>-->
                     <li class="{{ (Request::is('about') ? 'active' : '') }}">
                         <a href="{{ URL::to('about') }}">Giới thiệu</a>
                     </li>
                     <li class="{{ (Request::is('contact') ? 'active' : '') }}">
                         <a href="{{ URL::to('contact') }}">Liên hệ</a>
                     </li>
-                    <li class="">
-                        <a href="{{ URL::to('contact') }}">Báo Giá</a>
-                    </li>
-
                 </ul>
             </div><!-- /.navbar-collapse -->
 
