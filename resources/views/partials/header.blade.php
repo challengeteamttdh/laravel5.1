@@ -8,7 +8,7 @@
                 UY TÍN CỦA CHÚNG TÔI LÀ SỰ HÀI LÒNG CỦA KHÁCH HÀNG</strong>
         </div>
         <div class="info-banner">
-            <span>Liên hệ: 0983.438.810</span>
+            <span>Hotline: 0983438810 - 0969800266</span>
         </div>
     </div>
 </div>
