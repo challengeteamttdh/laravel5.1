@@ -3,10 +3,10 @@
         <div class=" footer_ct">
             <p><span style="font-size:16px"><strong>NỘI THẤT NGỌC
                             DŨNG</strong></span></p>
-            <p><a href="http://noithatngocdung.vn/">http://noithatngocdung.vn</a></p>
+            <p><a href="http://noithatngocdung.com/">noithatngocdung.com</a></p>
             <p>Địa chỉ xưởng&nbsp;: Dị Nậu -&nbsp;Thạch Thất - Hà Nội - Việt Nam</p>
-            <p>SĐT: 0983438810</p>
-            <p>Email: noithatngocdung.vn@gmail.com</p>
+            <p>SĐT: 0983438810 - 0969800266</p>
+            <p>Email: xuonggongocdung@gmail.com</p>
             <p>Bản quyền thuộc về Cơ Sở Sản Xuất Và&nbsp;Tư Vấn Thiết Kế Nội Thất Ngọc Dũng</p>
         </div>
         <div class=" right-footer">
