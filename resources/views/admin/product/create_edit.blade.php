@@ -17,43 +17,36 @@
     <!-- General tab -->
     <div class="tab-pane active" id="tab-general">
         <div class="form-group  {{ $errors->has('sub_category_id') ? 'has-error' : '' }}">
-            {!! Form::label('sub_category_id', trans("admin/admin.language"), array('class' => 'control-label')) !!}
+            {!! Form::label('sub_category_id', 'Danh Mục (bắt buộc)', array('class' => 'control-label')) !!}
             <div class="controls">
                 {!! Form::select('sub_category_id', $productsubcategory, @isset($product)? $product->sub_category_id : 'default', array('class' => 'form-control')) !!}
                 <span class="help-block">{{ $errors->first('sub_category_id', ':message') }}</span>
             </div>
         </div>
         <div class="form-group  {{ $errors->has('color_id') ? 'has-error' : '' }}">
-            {!! Form::label('color_id', trans("admin/admin.language"), array('class' => 'control-label')) !!}
+            {!! Form::label('color_id', 'Màu sắc', array('class' => 'control-label')) !!}
             <div class="controls">
                 {!! Form::select('color_id', $color, @isset($product)? $product->color_id : 'default', array('class' => 'form-control')) !!}
                 <span class="help-block">{{ $errors->first('color_id', ':message') }}</span>
             </div>
         </div>
         <div class="form-group  {{ $errors->has('material_id') ? 'has-error' : '' }}">
-            {!! Form::label('material_id', trans("admin/admin.language"), array('class' => 'control-label')) !!}
+            {!! Form::label('material_id', 'Chất liệu', array('class' => 'control-label')) !!}
             <div class="controls">
                 {!! Form::select('material_id', $material, @isset($product)? $product->material_id : 'default', array('class' => 'form-control')) !!}
                 <span class="help-block">{{ $errors->first('material_id', ':message') }}</span>
             </div>
         </div>
-        <div class="form-group  {{ $errors->has('producer_id') ? 'has-error' : '' }}">
-            {!! Form::label('producer_id', trans("admin/admin.language"), array('class' => 'control-label')) !!}
-            <div class="controls">
-                {!! Form::select('producer_id', $producer, @isset($product)? $product->producer_id : 'default', array('class' => 'form-control')) !!}
-                <span class="help-block">{{ $errors->first('sub_category_id', ':message') }}</span>
-            </div>
-        </div>
 
         <div class="form-group  {{ $errors->has('title') ? 'has-error' : '' }}">
-            {!! Form::label('title', trans("admin/modal.title"), array('class' => 'control-label')) !!}
+            {!! Form::label('title', 'Tiêu đề (bắt buộc)', array('class' => 'control-label')) !!}
             <div class="controls">
                 {!! Form::text('title', null, array('class' => 'form-control')) !!}
                 <span class="help-block">{{ $errors->first('title', ':message') }}</span>
             </div>
         </div>
         <div class="form-group  {{ $errors->has('product_code') ? 'has-error' : '' }}">
-            {!! Form::label('product_code', trans("admin/article.source"), array('class' => 'control-label')) !!}
+            {!! Form::label('product_code', "Mã sản phẩm( bắt buộc nhập)", array('class' => 'control-label')) !!}
             <div class="controls">
                 {!! Form::text('product_code', null, array('class' => 'form-control')) !!}
                 <span class="help-block">{{ $errors->first('product_code', ':message') }}</span>
@@ -70,7 +63,7 @@
                 class="form-group {{ $errors->has('image') ? 'error' : '' }}">
             <div class="col-lg-12">
                 <label class="control-label" for="image">
-                    {{ trans("admin/photo.picture") }}</label>
+                    Đăng ảnh (Bắt buộc nhập để hiện ở trang chủ)</label>
                 <input name="image" type="file" class="uploader" id="image" value="Upload"/>
             </div>
 

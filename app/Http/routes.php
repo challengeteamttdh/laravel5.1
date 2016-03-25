@@ -25,6 +25,7 @@ Route::get('product-{productid}', 'HomeController@product');
 Route::any('search', 'HomeController@search');
 Route::get('about', 'PagesController@about');
 Route::any('contact', 'PagesController@contact');
+Route::any('showathome', 'HomeController@showathome');
 Route::get('articles', 'ArticlesController@index');
 Route::get('article/{slug}', 'ArticlesController@show');
 Route::get('video/{id}', 'VideoController@show');

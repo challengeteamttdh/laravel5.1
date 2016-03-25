@@ -20,6 +20,9 @@
                     <li class="{{ (Request::is('about') ? 'active' : '') }}">
                         <a href="{{ URL::to('about') }}">Giới thiệu</a>
                     </li>
+                    <li class="{{ (Request::is('showathome') ? 'active' : '') }}">
+                        <a href="{{ URL::to('showathome') }}">Dự án đã thi công</a>
+                    </li>
                     <li class="{{ (Request::is('contact') ? 'active' : '') }}">
                         <a href="{{ URL::to('contact') }}">Liên hệ</a>
                     </li>

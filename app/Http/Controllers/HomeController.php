@@ -90,6 +90,11 @@ class HomeController extends Controller {
 
         return view('product.productbysubcate', compact('productsubcate','productbysubcate','productAndSubProduct'));
     }
+    public function showathome() {
+        $productAndSubProduct = $this->getcategory();
+        $productshowathome = DB::table('products')->where('showathome', 1)->get();
+        return view('product.productbyshowathome', compact('productshowathome','productAndSubProduct'));
+    }
     public function search(){
 //        if(Request::isMethod('post')){
 //            $params= Request::all();
