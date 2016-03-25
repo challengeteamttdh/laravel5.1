@@ -4,6 +4,11 @@
 <div class="col-md-12 col-xs-12 col-sm-12">
     <div class="contact">
         <h2 class="contact-title">Nội Thất Ngọc Dũng</h2>
+        @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+        @endif
         <div class="info">
             <label>SĐT: 0983438810</label>
             <p>Địa chỉ xưởng : Dị Nậu - Thạch Thất - Hà Nội - Việt Nam
@@ -18,7 +23,7 @@
                 <input type="text" name="name" id="name" placeholder="Họ và tên" />
             </p>
             <p class="name">
-                 <label for="adress">Địa chỉ</label>
+                <label for="adress">Địa chỉ</label>
                 <input type="text" name="adress" id="name" placeholder="Địa chỉ" />
             </p>
             <p class="name">

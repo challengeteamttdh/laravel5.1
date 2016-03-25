@@ -46,7 +46,7 @@ class PagesController extends Controller {
             Mail::send('emails.welcome', ['key' => 'value'], function($message) {
                 $message->to('phanthanhhak55hus@gmail.com', 'phan ha')->subject('Welcome!');
             });
-//            dd(Input::all());
+            return redirect('contact')->with('status', 'Cảm ơn bạn đã follow, chúc bạn vui vẻ :D !');
         }
         $productAndSubProduct = $this->getcategory();
         return view('pages.contact', compact('productAndSubProduct'));
