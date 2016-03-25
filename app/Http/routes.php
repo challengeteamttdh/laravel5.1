@@ -24,7 +24,7 @@ Route::get('product-sub-category-{productsubcateid}', 'HomeController@productsub
 Route::get('product-{productid}', 'HomeController@product');
 Route::any('search', 'HomeController@search');
 Route::get('about', 'PagesController@about');
-Route::get('contact', 'PagesController@contact');
+Route::any('contact', 'PagesController@contact');
 Route::get('articles', 'ArticlesController@index');
 Route::get('article/{slug}', 'ArticlesController@show');
 Route::get('video/{id}', 'VideoController@show');

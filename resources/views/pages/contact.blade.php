@@ -11,7 +11,8 @@
         </div>
         <br>
         <h3 class="contact-title">Liên hệ với chúng tôi</h3>
-        <form class="form">
+        <form class="form" method="post" action="{{URL::to('/contact')}}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <p class="name">
                 <label for="name">Họ và tên</label>
                 <input type="text" name="name" id="name" placeholder="Họ và tên" />
