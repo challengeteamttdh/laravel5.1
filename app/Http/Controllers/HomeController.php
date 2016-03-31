@@ -19,9 +19,8 @@ class HomeController extends Controller {
      * @return Response
      */
     public function getcategory() {
-        $product_cate = ProductCategory::all()->toArray();
+        $product_cate = ProductCategory::orderByRaw(DB::raw("FIELD(id, 3) DESC"))->get()->toArray();
         $product_sub_cate = ProductSubCategory::all()->toArray();
-        $products = Product::all();
         //get data for left menu
         $productAndSubProduct = array();
         foreach ($product_cate as $key => $cate) {
