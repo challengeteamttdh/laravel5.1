@@ -13,7 +13,7 @@
         <meta name="description"
               content="Lorem ipsum dolor sit amet, nihil fabulas et sea, nam posse menandri scripserit no, mei."/>
     @show
-    <title>@section('title')</title>
+    <title>@yield('title')</title>
 
     <link href="{{ asset('css/nprogress.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">

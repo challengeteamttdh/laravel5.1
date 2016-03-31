@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') Home :: @parent @stop
+@section('title','Nội Thất Ngọc Dũng') 
 @section('slider')
 <section id="slider"><!--slider-->
     <div class="myCarousel">
