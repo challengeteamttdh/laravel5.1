@@ -39,20 +39,9 @@ class HomeController extends Controller {
         $productAndSubProduct = $this->getcategory();
         $articles = Article::with('author')->orderBy('position', 'DESC')->orderBy('created_at', 'DESC')->limit(4)->get();
         $limit = 10;
-        $photoAlbums = PhotoAlbum::select(array(
-            'photo_albums.id',
-            'photo_albums.name',
-            'photo_albums.description',
-            'photo_albums.folder_id',
-            DB::raw('(select filename from photos WHERE album_cover=1 AND deleted_at IS NULL and photos.photo_album_id=photo_albums.id LIMIT 1) AS album_image'),
-            DB::raw('(select filename from photos WHERE photos.photo_album_id=photo_albums.id AND deleted_at IS NULL ORDER BY position ASC, id ASC LIMIT 1) AS album_image_first')
-        ))->limit(8)->get();
 
-
-
-        $homeProductCate = ProductCategory::take($limit)->get();
+        $homeProductCate = ProductCategory::take($limit)->orderByRaw(DB::raw("FIELD(id, 3) DESC"))->get();
         //get data product and category for home page
-
         $pro_home = array();
         foreach ($homeProductCate as $key => $productcate) {
             $pro_home[$key]['id'] = $productcate->id;
@@ -64,7 +53,7 @@ class HomeController extends Controller {
         if(count($sliders)<3){
             $sliders = Product::orderByRaw("RAND()")->take(5)->get();
         }
-        return view('pages.home', compact('articles', 'photoAlbums', 'product_cate', 'productAndSubProduct', 'pro_home','sliders'));
+        return view('pages.home', compact('articles', 'product_cate', 'productAndSubProduct', 'pro_home','sliders'));
     }
 
     public function productdetail($param = null) {
