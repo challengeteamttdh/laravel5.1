@@ -46,10 +46,10 @@
             <div class="truycap">
                 <div class="h20"><!----></div>
                 <div class="label">Đang online:</div>
-                <div class="value">2</div>
+                <div class="value">35</div>
                 <div class="cb h25"><!----></div>
                 <div class="label">Tổng truy cập:</div>
-                <div class="value">10</div>
+                <div class="value">10090</div>
                 <div class="cb h0"><!----></div>
             </div>
         </div>
