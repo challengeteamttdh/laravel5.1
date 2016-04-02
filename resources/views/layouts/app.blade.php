@@ -74,7 +74,10 @@
     jQuery(window).load(function () {
         NProgress.done();
     });
-
+    $(document).ready(function() {
+        $('.fb-comments').attr("data-href", document.URL);
+    });
+</script>
 </script>
 </body>
 </html>

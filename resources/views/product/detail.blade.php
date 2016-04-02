@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') Home :: @parent @stop
+@section('title') {{$product->title}} @parent @stop
 @section('content')
 <!--<div class="col-sm-9 col-md-9 col-xs-12 padding-right">-->
     <div id="ProductDetail">
@@ -48,6 +48,15 @@
                     <p>{!! $product->content !!}</p>
                     <p><img alt="" src="/appfiles/product/{{$product->picture}}" style="width: 700px; height: 460px;"></p>
                 </div>
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+                    fjs.parentNode.insertBefore(js, fjs);
+                  }(document, 'script', 'facebook-jssdk'));</script>
+                <div class="fb-comments" data-href="" data-numposts="5"></div>
                 <div class="h25"><!----></div>
             </div>
             <div class="h15"><!----></div>
