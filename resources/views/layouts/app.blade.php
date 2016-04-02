@@ -6,12 +6,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     @section('meta_keywords')
-        <meta name="keywords" content="your, awesome, keywords, here"/>
+        <meta name="keywords" content="Nội thất ngọc dũng"/>
     @show @section('meta_author')
-        <meta name="author" content="Jon Doe"/>
+        <meta name="author" content="Nội thất ngọc dũng"/>
     @show @section('meta_description')
         <meta name="description"
-              content="Lorem ipsum dolor sit amet, nihil fabulas et sea, nam posse menandri scripserit no, mei."/>
+              content="Nội thất ngọc dũng"/>
     @show
     <title>@yield('title')</title>
 
